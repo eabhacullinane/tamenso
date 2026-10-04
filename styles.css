@@ -53,12 +53,47 @@ a { color: inherit; }
 .splash-media {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse 55% 45% at 50% 42%, #f0c89655, transparent 60%),
-    repeating-linear-gradient(115deg, #0000 0 3px, #ffffff0d 3px 4px),
-    repeating-linear-gradient(25deg, #0000 0 3px, #00000012 3px 4px),
-    radial-gradient(ellipse 90% 70% at 30% 0%, #8a5a34 0%, #4a2e1c 55%, #241509 100%);
+    radial-gradient(ellipse 150% 95% at 50% 100%, transparent 0%, transparent 55%, #000000b0 85%, #000000 100%),
+    linear-gradient(180deg, #1c1208 0%, #0d0804 50%, #050302 100%);
 }
+
+/* soft light falling from above, like the reference photo's ceiling wash */
+.corridor-glow {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 46%;
+  height: 62%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 60% 100% at 50% 0%, #e8b87a22, transparent 72%);
+  filter: blur(6px);
+}
+
+/* the threshold itself: a small, distant arch of woven, light-catching texture */
+.threshold-arch {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -54%);
+  width: min(17%, 150px);
+  aspect-ratio: 3 / 4;
+  border-radius: 50% 50% 6% 6% / 58% 58% 6% 6%;
+  overflow: hidden;
+  box-shadow: 0 0 90px 36px #e8b87a1f, 0 0 36px 10px #f0c8963a, inset 0 0 26px 8px #00000070;
+  background: radial-gradient(ellipse at 50% 28%, #d99a52 0%, #8a5a34 45%, #2a1c10 88%);
+}
+.threshold-arch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(115deg, #0000 0 4px, #ffffff14 4px 5px),
+    repeating-linear-gradient(25deg, #0000 0 4px, #00000022 4px 5px);
+  mix-blend-mode: overlay;
+}
+
 .splash-media img {
   position: absolute;
   inset: 0;
