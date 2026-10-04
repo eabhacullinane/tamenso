@@ -17,7 +17,7 @@
   --stone: #E7DCC7;
   --ink: #2A231C;
   --moss: #4F5B44;
-  --rust: #AD5531;
+  --rust: #7A3B1E;
   --cream: #F4ECDC;
   --muted: #6B6251;
 }
@@ -28,7 +28,13 @@ html { scroll-behavior: auto; }
 
 body {
   margin: 0;
-  background: var(--stone);
+  background:
+    repeating-linear-gradient(115deg, #0000 0 5px, #2A231C09 5px 6px),
+    repeating-linear-gradient(25deg, #0000 0 5px, #2A231C07 5px 6px),
+    radial-gradient(ellipse 70% 50% at 20% 0%, #FBF4E4 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 90% 100%, #7A3B1E22 0%, transparent 65%),
+    radial-gradient(ellipse 60% 45% at 85% 100%, #D8C7A3 0%, transparent 65%),
+    var(--stone);
   color: var(--ink);
   font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
   font-weight: 400;
@@ -199,19 +205,39 @@ a { color: inherit; }
   display: flex;
   justify-content: center;
   background:
-    radial-gradient(ellipse 60% 50% at 15% 20%, #00000008, transparent),
-    radial-gradient(ellipse 50% 40% at 85% 10%, #ffffff30, transparent),
-    radial-gradient(ellipse 70% 60% at 75% 90%, #4F5B4412, transparent),
-    radial-gradient(ellipse 50% 50% at 30% 95%, #AD553112, transparent);
+    radial-gradient(ellipse 60% 50% at 15% 20%, #00000010, transparent),
+    radial-gradient(ellipse 50% 40% at 85% 10%, #ffffff35, transparent),
+    radial-gradient(ellipse 70% 60% at 75% 90%, #4F5B4420, transparent),
+    radial-gradient(ellipse 50% 50% at 30% 95%, #7A3B1E1c, transparent);
 }
 .hero .arch {
+  position: relative;
+  overflow: hidden;
   width: min(560px, 92%);
   padding: 5rem 2.5rem 3rem;
   text-align: center;
   border-radius: 300px 300px 8px 8px;
-  background: linear-gradient(180deg, #2A231C0d, #2A231C00 55%);
-  border: 1px solid #2A231C1f;
-  box-shadow: inset 0 22px 50px -26px #2A231C40;
+  background: linear-gradient(180deg, #2A231C1e, #2A231C00 60%);
+  border: 1px solid #2A231C55;
+  box-shadow: inset 0 26px 56px -22px #2A231C70, 0 1px 0 #FBF4E480;
+}
+.hero .arch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(115deg, #0000 0 6px, #2A231C14 6px 7px),
+    repeating-linear-gradient(25deg, #0000 0 6px, #2A231C10 6px 7px);
+  background-size: 180% 180%;
+  animation: grainDrift 40s linear infinite;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .arch::before { animation: none; }
+}
+@keyframes grainDrift {
+  0%   { background-position: 0% 0%, 0% 0%; }
+  100% { background-position: 120px 90px, -90px 120px; }
 }
 .hero .eyebrow {
   font-size: 0.7rem;
@@ -236,7 +262,7 @@ a { color: inherit; }
   margin: 0 auto;
   color: #4A4032;
 }
-.hero .threshold-rule { width: 32px; height: 1px; background: var(--rust); margin: 1.5rem auto 0; }
+.hero .threshold-rule { width: 36px; height: 2px; background: var(--rust); margin: 1.5rem auto 0; }
 
 .section { padding: 5rem 1.5rem; display: flex; justify-content: center; }
 .section-inner { max-width: 58ch; text-align: center; }
