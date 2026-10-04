@@ -26,6 +26,9 @@
 
   applyLang(initialLang());
 
+  var yearEl = document.getElementById('year');
+  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
   if (toggleBtn) {
     toggleBtn.addEventListener('click', function () {
       var next = html.lang === 'fr' ? 'en' : 'fr';

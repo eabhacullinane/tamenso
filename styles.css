@@ -238,7 +238,42 @@ a { color: inherit; }
 }
 .hero .threshold-rule { width: 32px; height: 1px; background: var(--rust); margin: 1.5rem auto 0; }
 
-section[data-i18n-section] { scroll-margin-top: 2rem; }
+.section { padding: 5rem 1.5rem; display: flex; justify-content: center; }
+.section-inner { max-width: 58ch; text-align: center; }
+.section .eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6F5A3B;
+  margin: 0 0 1.3rem;
+}
+.section-text {
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0;
+  color: #3A3226;
+}
+.section-text em { font-style: italic; }
+.section.contact .section-text a {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+.rule { width: 32px; height: 1px; margin: 1.6rem auto 0; }
+.rule.moss { background: var(--moss); }
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem 3rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px solid #2A231C14;
+}
+.site-footer a { text-decoration: underline; text-underline-offset: 2px; }
 
 main:focus { outline: none; }
 
