@@ -335,27 +335,27 @@
   <section class="academy" id="academy" aria-labelledby="academy-h">
     <div class="academy-inner">
       <div class="section-head left reveal">
-        <p class="eyebrow">Táménso Academy · free lessons</p>
+        <p class="eyebrow">Táménso Academy · first 3 lessons free</p>
         <h2 id="academy-h">Learn Claude, in your language</h2>
         <p class="intro">The best material on AI is in English and written for developers. Táménso Academy turns it into short, free lessons for small businesses: plain language, real tasks, in Italian, French and English.</p>
         <div class="ctas">
           <a class="btn btn-ink" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank">Watch on Instagram</a>
           <a class="btn btn-line" href="mailto:eabha@tamenso.com?subject=Academy%20lessons">Get new lessons by email</a>
         </div>
-        <a class="video-frame" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank" aria-label="Watch on Instagram">
-          <span class="vf-tag">Lesson 02 · 3 min</span>
+        <button type="button" class="video-frame" data-lesson="l1" aria-label="Watch: What AI can and can&#x27;t do for you">
+          <span class="vf-tag">Lesson 01 · 3 min</span>
           <span class="vf-play" aria-hidden="true"></span>
-          <span class="vf-title">Asking well</span>
+          <span class="vf-title">What AI can and can&#x27;t do for you</span>
           <span class="vf-bar" aria-hidden="true"><i></i></span>
-        </a>
+        </button>
       </div>
       <ol class="modules">
-        <li class="reveal"><span class="mod-n">01</span><div><h3>What AI can and can&#x27;t do for you</h3><p>A clear picture, without hype, of where it saves time and where it doesn&#x27;t.</p></div></li>
-        <li class="reveal"><span class="mod-n">02</span><div><h3>Asking well</h3><p>How to brief Claude like a good colleague, with context, examples and a clear result.</p></div></li>
-        <li class="reveal"><span class="mod-n">03</span><div><h3>Your company&#x27;s knowledge, in one place</h3><p>Projects, documents and instructions so answers sound like your business.</p></div></li>
-        <li class="reveal"><span class="mod-n">04</span><div><h3>Connecting your tools</h3><p>Email, calendar, shared drives and CRM, linked so the assistant can act, not just answer.</p></div></li>
-        <li class="reveal"><span class="mod-n">05</span><div><h3>Automating a weekly task</h3><p>From a repetitive job to a routine that runs on its own, step by step.</p></div></li>
-        <li class="reveal"><span class="mod-n">06</span><div><h3>Using AI responsibly</h3><p>Data, privacy, checking results, and what the AI Act asks of you.</p></div></li>
+        <li class="reveal"><span class="mod-n">01</span><div><h3>What AI can and can&#x27;t do for you</h3><p>A clear picture, without hype, of where it saves time and where it doesn&#x27;t.</p><button type="button" class="watch" data-lesson="l1"><span class="watch-play" aria-hidden="true"></span>Watch · 3 min</button></div></li>
+        <li class="reveal"><span class="mod-n">02</span><div><h3>Asking well</h3><p>How to brief Claude like a good colleague, with context, examples and a clear result.</p><button type="button" class="watch" data-lesson="l2"><span class="watch-play" aria-hidden="true"></span>Watch · 3 min</button></div></li>
+        <li class="reveal"><span class="mod-n">03</span><div><h3>Your company&#x27;s knowledge, in one place</h3><p>Projects, documents and instructions so answers sound like your business.</p><button type="button" class="watch" data-lesson="l3"><span class="watch-play" aria-hidden="true"></span>Watch · 3 min</button></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">04</span><div><h3>Connecting your tools <span class="soon">Coming soon</span></h3><p>Email, calendar, shared drives and CRM, linked so the assistant can act, not just answer.</p></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">05</span><div><h3>Automating a weekly task <span class="soon">Coming soon</span></h3><p>From a repetitive job to a routine that runs on its own, step by step.</p></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">06</span><div><h3>Using AI responsibly <span class="soon">Coming soon</span></h3><p>Data, privacy, checking results, and what the AI Act asks of you.</p></div></li>
       </ol>
     </div>
     <p class="disclaimer">Built from official documentation and reputable sources, rewritten and tested for small businesses. Táménso is independent and not affiliated with or endorsed by Anthropic. Claude is a trademark of Anthropic.</p>
@@ -406,6 +406,28 @@
   </section>
 
 </main>
+
+
+<!-- ============ LESSON PLAYER ============ -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="pl-title" hidden
+     data-copy="Copy" data-copied="Copied" data-before="Before" data-after="After"
+     data-example="Example" data-lesson="Lesson" data-next="Next lesson">
+  <div class="pl-shell">
+    <div class="pl-top">
+      <p class="pl-meta"><svg class="pl-mark" aria-hidden="true"><use href="#mark"/></svg><span id="pl-title"></span></p>
+      <button type="button" class="pl-close" aria-label="Close">×</button>
+    </div>
+    <div class="pl-bars" aria-hidden="true"></div>
+    <div class="pl-stage" aria-live="polite"></div>
+    <div class="pl-controls">
+      <button type="button" class="pl-btn pl-prev" aria-label="Previous">←</button>
+      <button type="button" class="pl-btn pl-toggle" aria-label="Pause" data-play="Play" data-pause="Pause"><span class="pl-icon"></span></button>
+      <button type="button" class="pl-btn pl-next" aria-label="Next">→</button>
+      <span class="pl-count"></span>
+    </div>
+  </div>
+</div>
+<script type="application/json" id="lessons-data">[{"id": "l1", "n": "01", "mins": 3, "title": "What AI can and can't do for you", "slides": [{"t": "title", "h": "What AI can and can't do for you", "p": "Three minutes to know where Claude saves you time, and where you stay in charge."}, {"t": "text", "h": "Think of a fast, well-read assistant for words", "p": "Claude reads, writes, summarises, translates and sorts text very well. Anything your team does with emails, documents and messages is a candidate."}, {"t": "list", "h": "Where it saves time this week", "items": ["Replies to the questions you answer every day", "Menus, product texts and posts in three languages", "First drafts of quotes and proposals", "Meeting notes turned into a to-do list"]}, {"t": "list", "h": "What it can't do on its own", "items": ["Know your prices, clients or stock unless you give them", "Be right every time: it can sound sure and still be wrong", "Decide for you: your judgement stays the last step"]}, {"t": "example", "h": "Treat it like a new colleague's draft", "p": "Read before you send. Check numbers, names, dates and anything you would be embarrassed to get wrong.", "ex": "40 supplier emails → a one-page summary of what's late, what changed and what needs an answer. You check the summary in 5 minutes instead of reading for an hour."}, {"t": "prompt", "h": "Try it", "p": "Paste a few real emails you received this week and use this:", "prompt": "Here are 5 emails I received this week. Group them by topic, tell me which ones need an answer today, and draft a short, friendly and professional reply for each."}, {"t": "end", "h": "In one line", "p": "Claude drafts, sorts and translates; you check and decide. Next: how to ask well."}]}, {"id": "l2", "n": "02", "mins": 3, "title": "Asking well", "slides": [{"t": "title", "h": "Asking well", "p": "The quality of the answer depends on the quality of the request. Here is how to brief Claude like a good colleague."}, {"t": "list", "h": "A good request has four parts", "items": ["Context: who you are and who it's for", "Task: what you want, exactly", "Limits: length, tone, language", "An example of what good looks like"]}, {"t": "compare", "h": "Before and after", "before": "Write a menu description.", "after": "I run a family trattoria in Bologna. Write 3 menu descriptions (max 20 words each) for our tagliatelle al ragù, in Italian and English. Warm, not fancy. Here's one we like: “Our nonna's Sunday ragù, slow-cooked for six hours.”"}, {"t": "text", "h": "Then talk back", "p": "The first answer is a starting point. Say “shorter”, “more formal”, “give me three options” or “keep the second one and change the ending”. Two or three rounds usually get you there."}, {"t": "list", "h": "Small habits that help", "items": ["Paste the real material: the email, the price list, the notes", "Ask it to ask you questions if something is missing", "Say what to avoid, not only what you want"]}, {"t": "prompt", "h": "Try it", "p": "Pick one text you write often and fill in the brackets:", "prompt": "I run [your business] in [city]. Write [what] for [who], in [language], max [length]. The tone should be [tone]. Here is an example we like: [paste]. Before you start, ask me anything you need to know."}, {"t": "end", "h": "In one line", "p": "Context, task, limits, example, then refine together. Next: give Claude your company's knowledge once."}]}, {"id": "l3", "n": "03", "mins": 3, "title": "Your company's knowledge, in one place", "slides": [{"t": "title", "h": "Your company's knowledge, in one place", "p": "Stop re-explaining your business in every chat."}, {"t": "text", "h": "Projects: a room for each part of your work", "p": "In Claude, a Project holds documents and instructions you set once. Every conversation inside it already knows them."}, {"t": "list", "h": "What to put inside", "items": ["Price list, opening hours, policies", "Your most frequent questions and good answers", "Examples of texts in your tone of voice", "Menu, catalogue or service descriptions"]}, {"t": "example", "h": "Write the instructions once", "p": "Short, clear rules work best.", "ex": "You answer as the team of Trattoria Da Giulia. Reply in the customer's language. Be warm and brief. Never confirm a booking yourself: suggest times and say we will confirm within the hour."}, {"t": "list", "h": "Keep it useful", "items": ["One project per area: customers, suppliers, marketing", "Update the documents when prices or hours change", "Keep private data out of it unless your plan and policy allow it"]}, {"t": "prompt", "h": "Try it", "p": "Create a project called “Customer replies”, add your FAQ and price list, paste the instructions above, then test it with a real message:", "prompt": "A customer wrote this: [paste]. Draft our reply using the project's information. Tell me if anything is missing from our documents."}, {"t": "end", "h": "In one line", "p": "Set up your knowledge once, and every answer starts from your business. That's the base for everything that follows."}]}]</script>
 
 <footer class="site-footer">
   <div class="foot-brand">

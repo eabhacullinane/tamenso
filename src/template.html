@@ -342,20 +342,20 @@
           <a class="btn btn-ink" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank">{{academy.cta2}}</a>
           <a class="btn btn-line" href="mailto:eabha@tamenso.com?subject={{academy.mailsubject}}">{{academy.cta}}</a>
         </div>
-        <a class="video-frame" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank" aria-label="{{academy.cta2}}">
-          <span class="vf-tag">{{academy.vftag}}</span>
+        <button type="button" class="video-frame" data-lesson="l1" aria-label="{{player.watch}}: {{academy.c1.title}}">
+          <span class="vf-tag">{{player.lesson}} 01 · 3 min</span>
           <span class="vf-play" aria-hidden="true"></span>
-          <span class="vf-title">{{academy.c2.title}}</span>
+          <span class="vf-title">{{academy.c1.title}}</span>
           <span class="vf-bar" aria-hidden="true"><i></i></span>
-        </a>
+        </button>
       </div>
       <ol class="modules">
-        <li class="reveal"><span class="mod-n">01</span><div><h3>{{academy.c1.title}}</h3><p>{{academy.c1.text}}</p></div></li>
-        <li class="reveal"><span class="mod-n">02</span><div><h3>{{academy.c2.title}}</h3><p>{{academy.c2.text}}</p></div></li>
-        <li class="reveal"><span class="mod-n">03</span><div><h3>{{academy.c3.title}}</h3><p>{{academy.c3.text}}</p></div></li>
-        <li class="reveal"><span class="mod-n">04</span><div><h3>{{academy.c4.title}}</h3><p>{{academy.c4.text}}</p></div></li>
-        <li class="reveal"><span class="mod-n">05</span><div><h3>{{academy.c5.title}}</h3><p>{{academy.c5.text}}</p></div></li>
-        <li class="reveal"><span class="mod-n">06</span><div><h3>{{academy.c6.title}}</h3><p>{{academy.c6.text}}</p></div></li>
+        <li class="reveal"><span class="mod-n">01</span><div><h3>{{academy.c1.title}}</h3><p>{{academy.c1.text}}</p><button type="button" class="watch" data-lesson="l1"><span class="watch-play" aria-hidden="true"></span>{{player.watch}} · 3 min</button></div></li>
+        <li class="reveal"><span class="mod-n">02</span><div><h3>{{academy.c2.title}}</h3><p>{{academy.c2.text}}</p><button type="button" class="watch" data-lesson="l2"><span class="watch-play" aria-hidden="true"></span>{{player.watch}} · 3 min</button></div></li>
+        <li class="reveal"><span class="mod-n">03</span><div><h3>{{academy.c3.title}}</h3><p>{{academy.c3.text}}</p><button type="button" class="watch" data-lesson="l3"><span class="watch-play" aria-hidden="true"></span>{{player.watch}} · 3 min</button></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">04</span><div><h3>{{academy.c4.title}} <span class="soon">{{player.soon}}</span></h3><p>{{academy.c4.text}}</p></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">05</span><div><h3>{{academy.c5.title}} <span class="soon">{{player.soon}}</span></h3><p>{{academy.c5.text}}</p></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">06</span><div><h3>{{academy.c6.title}} <span class="soon">{{player.soon}}</span></h3><p>{{academy.c6.text}}</p></div></li>
       </ol>
     </div>
     <p class="disclaimer">{{academy.disclaimer}}</p>
@@ -406,6 +406,28 @@
   </section>
 
 </main>
+
+
+<!-- ============ LESSON PLAYER ============ -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="pl-title" hidden
+     data-copy="{{player.copy}}" data-copied="{{player.copied}}" data-before="{{player.before}}" data-after="{{player.after}}"
+     data-example="{{player.example}}" data-lesson="{{player.lesson}}" data-next="{{player.nextlesson}}">
+  <div class="pl-shell">
+    <div class="pl-top">
+      <p class="pl-meta"><svg class="pl-mark" aria-hidden="true"><use href="#mark"/></svg><span id="pl-title"></span></p>
+      <button type="button" class="pl-close" aria-label="{{player.close}}">×</button>
+    </div>
+    <div class="pl-bars" aria-hidden="true"></div>
+    <div class="pl-stage" aria-live="polite"></div>
+    <div class="pl-controls">
+      <button type="button" class="pl-btn pl-prev" aria-label="{{player.prev}}">←</button>
+      <button type="button" class="pl-btn pl-toggle" aria-label="{{player.pause}}" data-play="{{player.play}}" data-pause="{{player.pause}}"><span class="pl-icon"></span></button>
+      <button type="button" class="pl-btn pl-next" aria-label="{{player.next}}">→</button>
+      <span class="pl-count"></span>
+    </div>
+  </div>
+</div>
+<script type="application/json" id="lessons-data">{{lessons.json}}</script>
 
 <footer class="site-footer">
   <div class="foot-brand">

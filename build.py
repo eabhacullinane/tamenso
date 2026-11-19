@@ -14,11 +14,13 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 TEMPLATE = (ROOT / "src" / "template.html").read_text(encoding="utf-8")
 LANGS = ["en", "it", "fr"]
-RAW_KEYS = {"lang", "path"}  # inserted as-is
+RAW_KEYS = {"lang", "path", "lessons.json"}  # inserted as-is
 
 
 def render(lang: str) -> str:
     content = json.loads((ROOT / "src" / "content" / f"{lang}.json").read_text(encoding="utf-8"))
+    lessons = (ROOT / "src" / "content" / f"lessons.{lang}.json").read_text(encoding="utf-8")
+    content["lessons.json"] = json.dumps(json.loads(lessons), ensure_ascii=False).replace("</", "<\\/")
     for code in LANGS:
         content[f"cur.{code}"] = 'aria-current="page"' if code == lang else ""
 

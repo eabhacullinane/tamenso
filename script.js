@@ -65,6 +65,120 @@
     watch.forEach(function (el) { fo.observe(el); });
   }
 
+
+  // Lesson player: short slide lessons that play like a video
+  var player = document.getElementById('player');
+  var dataEl = document.getElementById('lessons-data');
+  if (player && dataEl) {
+    var lessons = [];
+    try { lessons = JSON.parse(dataEl.textContent); } catch (e) {}
+    var stage = player.querySelector('.pl-stage'), bars = player.querySelector('.pl-bars');
+    var titleEl = document.getElementById('pl-title'), countEl = player.querySelector('.pl-count');
+    var toggle = player.querySelector('.pl-toggle');
+    var L = null, idx = 0, elapsed = 0, dur = 0, paused = false, last = 0, raf = 0, opener = null;
+    var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var words = function (sl) { return [sl.h, sl.p, sl.ex, sl.before, sl.after, sl.prompt].concat(sl.items || []).join(' ').split(/\s+/).length; };
+    var A = function (k) { return player.getAttribute('data-' + k); };
+
+    function render() {
+      var sl = L.slides[idx], h = '';
+      var kicker = A('lesson') + ' ' + L.n;
+      h += '<div class="slide' + (sl.t === 'title' ? ' is-title' : '') + '">';
+      h += '<p class="k">' + esc(kicker) + ' · ' + (idx + 1) + '/' + L.slides.length + '</p>';
+      h += '<h3>' + esc(sl.h) + '</h3>';
+      if (sl.p) h += '<p>' + esc(sl.p) + '</p>';
+      if (sl.items) h += '<ul>' + sl.items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>';
+      if (sl.ex) h += '<div class="box box-ex"><small>' + esc(A('example')) + '</small>' + esc(sl.ex) + '</div>';
+      if (sl.t === 'compare') h += '<div class="cmp"><div class="box box-before"><small>' + esc(A('before')) + '</small><s>' + esc(sl.before) + '</s></div><div class="box box-after"><small>' + esc(A('after')) + '</small>' + esc(sl.after) + '</div></div>';
+      if (sl.prompt) h += '<div class="box prompt-box">' + esc(sl.prompt) + '<button type="button" class="copy-btn">' + esc(A('copy')) + '</button></div>';
+      if (sl.t === 'end') {
+        var nx = lessons[lessons.indexOf(L) + 1];
+        if (nx) h += '<button type="button" class="btn btn-glow next-lesson" data-go="' + nx.id + '">' + esc(A('next')) + ' · ' + esc(nx.title) + ' →</button>';
+      }
+      h += '</div>';
+      stage.innerHTML = h;
+      stage.scrollTop = 0;
+      countEl.textContent = (idx + 1) + ' / ' + L.slides.length;
+      Array.prototype.forEach.call(bars.children, function (b, i) {
+        b.classList.toggle('done', i < idx);
+        b.firstChild.style.width = i < idx ? '100%' : '0';
+      });
+      elapsed = 0;
+      dur = Math.max(7000, Math.min(26000, 3500 + words(sl) * 330)) + (sl.prompt ? 6000 : 0);
+      var cp = stage.querySelector('.copy-btn');
+      if (cp) cp.addEventListener('click', function () {
+        setPaused(true);
+        try { navigator.clipboard.writeText(sl.prompt).then(function () { cp.textContent = A('copied'); }); } catch (e) {}
+      });
+      var go = stage.querySelector('.next-lesson');
+      if (go) go.addEventListener('click', function () { open(go.getAttribute('data-go')); });
+    }
+    function tick(t) {
+      if (!last) last = t;
+      var dt = t - last; last = t;
+      if (!paused && L) {
+        elapsed += dt;
+        var bar = bars.children[idx];
+        if (bar) bar.firstChild.style.width = Math.min(100, elapsed / dur * 100) + '%';
+        if (elapsed >= dur) {
+          if (idx < L.slides.length - 1) { idx++; render(); } else { setPaused(true); }
+        }
+      }
+      raf = requestAnimationFrame(tick);
+    }
+    function setPaused(p) {
+      paused = p;
+      toggle.classList.toggle('paused', p);
+      toggle.setAttribute('aria-label', p ? toggle.getAttribute('data-play') : toggle.getAttribute('data-pause'));
+    }
+    function open(id) {
+      L = lessons.filter(function (x) { return x.id === id; })[0];
+      if (!L) return;
+      idx = 0;
+      titleEl.textContent = A('lesson') + ' ' + L.n + ' · ' + L.title;
+      bars.innerHTML = L.slides.map(function () { return '<span><i></i></span>'; }).join('');
+      player.hidden = false;
+      document.body.classList.add('pl-open');
+      setPaused(reduce);
+      render();
+      last = 0;
+      cancelAnimationFrame(raf); raf = requestAnimationFrame(tick);
+      player.querySelector('.pl-close').focus();
+    }
+    function close() {
+      player.hidden = true; L = null;
+      document.body.classList.remove('pl-open');
+      cancelAnimationFrame(raf);
+      if (opener) opener.focus();
+    }
+    function step(d) {
+      if (!L) return;
+      var n = idx + d;
+      if (n < 0 || n >= L.slides.length) return;
+      idx = n; render();
+    }
+    document.querySelectorAll('[data-lesson]').forEach(function (b) {
+      if (b === player) return;
+      b.addEventListener('click', function () { opener = b; open(b.getAttribute('data-lesson')); });
+    });
+    player.querySelector('.pl-close').addEventListener('click', close);
+    player.querySelector('.pl-prev').addEventListener('click', function () { step(-1); });
+    player.querySelector('.pl-next').addEventListener('click', function () { step(1); });
+    toggle.addEventListener('click', function () {
+      if (paused && L && idx === L.slides.length - 1 && elapsed >= dur) { idx = 0; render(); }
+      setPaused(!paused);
+    });
+    player.addEventListener('click', function (e) { if (e.target === player) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (player.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') step(1);
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === ' ' && e.target === document.body) { e.preventDefault(); setPaused(!paused); }
+    });
+    document.addEventListener('visibilitychange', function () { if (document.hidden && L) setPaused(true); });
+  }
+
   // Corridor: steer with the mouse (or the phone's tilt)
   var scene = document.querySelector('.scene');
   if (scene && !reduce) {

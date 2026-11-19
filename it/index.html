@@ -335,27 +335,27 @@
   <section class="academy" id="academy" aria-labelledby="academy-h">
     <div class="academy-inner">
       <div class="section-head left reveal">
-        <p class="eyebrow">Táménso Academy · lezioni gratuite</p>
+        <p class="eyebrow">Táménso Academy · prime 3 lezioni gratis</p>
         <h2 id="academy-h">Impara Claude, nella tua lingua</h2>
         <p class="intro">Il materiale migliore sull&#x27;IA è in inglese e pensato per sviluppatori. La Táménso Academy lo trasforma in brevi lezioni gratuite per le piccole imprese: linguaggio semplice, compiti veri, in italiano, francese e inglese.</p>
         <div class="ctas">
           <a class="btn btn-ink" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank">Guarda su Instagram</a>
           <a class="btn btn-line" href="mailto:eabha@tamenso.com?subject=Lezioni%20Academy">Ricevi le nuove lezioni via email</a>
         </div>
-        <a class="video-frame" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank" aria-label="Guarda su Instagram">
-          <span class="vf-tag">Lezione 02 · 3 min</span>
+        <button type="button" class="video-frame" data-lesson="l1" aria-label="Guarda: Cosa l&#x27;IA può e non può fare per te">
+          <span class="vf-tag">Lezione 01 · 3 min</span>
           <span class="vf-play" aria-hidden="true"></span>
-          <span class="vf-title">Chiedere bene</span>
+          <span class="vf-title">Cosa l&#x27;IA può e non può fare per te</span>
           <span class="vf-bar" aria-hidden="true"><i></i></span>
-        </a>
+        </button>
       </div>
       <ol class="modules">
-        <li class="reveal"><span class="mod-n">01</span><div><h3>Cosa l&#x27;IA può e non può fare per te</h3><p>Un quadro chiaro, senza clamore, di dove fa risparmiare tempo e dove no.</p></div></li>
-        <li class="reveal"><span class="mod-n">02</span><div><h3>Chiedere bene</h3><p>Come dare istruzioni a Claude come a un buon collega: contesto, esempi, un risultato chiaro.</p></div></li>
-        <li class="reveal"><span class="mod-n">03</span><div><h3>La conoscenza dell&#x27;azienda, in un solo posto</h3><p>Progetti, documenti e istruzioni perché le risposte parlino come la tua impresa.</p></div></li>
-        <li class="reveal"><span class="mod-n">04</span><div><h3>Collegare i tuoi strumenti</h3><p>Email, calendario, cartelle condivise e CRM, collegati perché l&#x27;assistente possa agire, non solo rispondere.</p></div></li>
-        <li class="reveal"><span class="mod-n">05</span><div><h3>Automatizzare un&#x27;attività settimanale</h3><p>Da un lavoro ripetitivo a una routine che va da sola, passo dopo passo.</p></div></li>
-        <li class="reveal"><span class="mod-n">06</span><div><h3>Usare l&#x27;IA in modo responsabile</h3><p>Dati, privacy, verifica dei risultati e cosa ti chiede l&#x27;AI Act.</p></div></li>
+        <li class="reveal"><span class="mod-n">01</span><div><h3>Cosa l&#x27;IA può e non può fare per te</h3><p>Un quadro chiaro, senza clamore, di dove fa risparmiare tempo e dove no.</p><button type="button" class="watch" data-lesson="l1"><span class="watch-play" aria-hidden="true"></span>Guarda · 3 min</button></div></li>
+        <li class="reveal"><span class="mod-n">02</span><div><h3>Chiedere bene</h3><p>Come dare istruzioni a Claude come a un buon collega: contesto, esempi, un risultato chiaro.</p><button type="button" class="watch" data-lesson="l2"><span class="watch-play" aria-hidden="true"></span>Guarda · 3 min</button></div></li>
+        <li class="reveal"><span class="mod-n">03</span><div><h3>La conoscenza dell&#x27;azienda, in un solo posto</h3><p>Progetti, documenti e istruzioni perché le risposte parlino come la tua impresa.</p><button type="button" class="watch" data-lesson="l3"><span class="watch-play" aria-hidden="true"></span>Guarda · 3 min</button></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">04</span><div><h3>Collegare i tuoi strumenti <span class="soon">In arrivo</span></h3><p>Email, calendario, cartelle condivise e CRM, collegati perché l&#x27;assistente possa agire, non solo rispondere.</p></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">05</span><div><h3>Automatizzare un&#x27;attività settimanale <span class="soon">In arrivo</span></h3><p>Da un lavoro ripetitivo a una routine che va da sola, passo dopo passo.</p></div></li>
+        <li class="reveal mod-soon"><span class="mod-n">06</span><div><h3>Usare l&#x27;IA in modo responsabile <span class="soon">In arrivo</span></h3><p>Dati, privacy, verifica dei risultati e cosa ti chiede l&#x27;AI Act.</p></div></li>
       </ol>
     </div>
     <p class="disclaimer">Costruita a partire dalla documentazione ufficiale e da fonti autorevoli, riscritta e testata per le PMI. Táménso è indipendente e non è affiliata né approvata da Anthropic. Claude è un marchio di Anthropic.</p>
@@ -406,6 +406,28 @@
   </section>
 
 </main>
+
+
+<!-- ============ LESSON PLAYER ============ -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="pl-title" hidden
+     data-copy="Copia" data-copied="Copiato" data-before="Prima" data-after="Dopo"
+     data-example="Esempio" data-lesson="Lezione" data-next="Lezione successiva">
+  <div class="pl-shell">
+    <div class="pl-top">
+      <p class="pl-meta"><svg class="pl-mark" aria-hidden="true"><use href="#mark"/></svg><span id="pl-title"></span></p>
+      <button type="button" class="pl-close" aria-label="Chiudi">×</button>
+    </div>
+    <div class="pl-bars" aria-hidden="true"></div>
+    <div class="pl-stage" aria-live="polite"></div>
+    <div class="pl-controls">
+      <button type="button" class="pl-btn pl-prev" aria-label="Indietro">←</button>
+      <button type="button" class="pl-btn pl-toggle" aria-label="Pausa" data-play="Riproduci" data-pause="Pausa"><span class="pl-icon"></span></button>
+      <button type="button" class="pl-btn pl-next" aria-label="Avanti">→</button>
+      <span class="pl-count"></span>
+    </div>
+  </div>
+</div>
+<script type="application/json" id="lessons-data">[{"id": "l1", "n": "01", "mins": 3, "title": "Cosa l'IA può e non può fare per te", "slides": [{"t": "title", "h": "Cosa l'IA può e non può fare per te", "p": "Tre minuti per capire dove Claude ti fa risparmiare tempo, e dove decidi tu."}, {"t": "text", "h": "Pensa a un assistente veloce e colto, fatto per le parole", "p": "Claude legge, scrive, riassume, traduce e ordina testi molto bene. Tutto ciò che il tuo team fa con email, documenti e messaggi è un buon punto di partenza."}, {"t": "list", "h": "Dove ti fa risparmiare tempo già questa settimana", "items": ["Risposte alle domande che ricevi ogni giorno", "Menu, schede prodotto e post in tre lingue", "Prime bozze di preventivi e proposte", "Appunti di una riunione trasformati in lista di cose da fare"]}, {"t": "list", "h": "Cosa non può fare da solo", "items": ["Conoscere prezzi, clienti o magazzino, se non glieli dai tu", "Avere sempre ragione: può sembrare sicuro e sbagliarsi", "Decidere al posto tuo: l'ultima parola resta la tua"]}, {"t": "example", "h": "Trattalo come la bozza di un nuovo collega", "p": "Rileggi prima di inviare. Controlla numeri, nomi, date e tutto ciò che non vorresti sbagliare.", "ex": "40 email dei fornitori → un riassunto di una pagina: cosa è in ritardo, cosa è cambiato, cosa richiede risposta. Lo controlli in 5 minuti invece di leggere per un'ora."}, {"t": "prompt", "h": "Prova tu", "p": "Incolla alcune email vere ricevute questa settimana e usa questo:", "prompt": "Ecco 5 email che ho ricevuto questa settimana. Raggruppale per argomento, dimmi quali richiedono una risposta oggi e scrivi per ciascuna una breve risposta, cordiale e professionale."}, {"t": "end", "h": "In una riga", "p": "Claude scrive bozze, ordina e traduce; tu controlli e decidi. Prossima lezione: chiedere bene."}]}, {"id": "l2", "n": "02", "mins": 3, "title": "Chiedere bene", "slides": [{"t": "title", "h": "Chiedere bene", "p": "La qualità della risposta dipende dalla qualità della richiesta. Ecco come dare istruzioni a Claude come a un buon collega."}, {"t": "list", "h": "Una buona richiesta ha quattro parti", "items": ["Contesto: chi sei e per chi è", "Compito: cosa vuoi, esattamente", "Limiti: lunghezza, tono, lingua", "Un esempio di risultato che ti piace"]}, {"t": "compare", "h": "Prima e dopo", "before": "Scrivi una descrizione per il menu.", "after": "Gestisco una trattoria di famiglia a Bologna. Scrivi 3 descrizioni per il menu (massimo 20 parole ciascuna) per le nostre tagliatelle al ragù, in italiano e in inglese. Tono caldo, non pomposo. Eccone una che ci piace: «Il ragù della domenica della nonna, cotto lentamente per sei ore.»"}, {"t": "text", "h": "Poi rispondi", "p": "La prima risposta è un punto di partenza. Di' «più breve», «più formale», «dammi tre opzioni» oppure «tieni la seconda e cambia la chiusura». Di solito bastano due o tre passaggi."}, {"t": "list", "h": "Piccole abitudini che aiutano", "items": ["Incolla il materiale vero: l'email, il listino, gli appunti", "Chiedigli di farti domande se manca qualcosa", "Di' cosa evitare, non solo cosa vuoi"]}, {"t": "prompt", "h": "Prova tu", "p": "Scegli un testo che scrivi spesso e completa le parentesi:", "prompt": "Gestisco [la tua impresa] a [città]. Scrivi [cosa] per [chi], in [lingua], massimo [lunghezza]. Il tono deve essere [tono]. Ecco un esempio che ci piace: [incolla]. Prima di iniziare, fammi tutte le domande che ti servono."}, {"t": "end", "h": "In una riga", "p": "Contesto, compito, limiti, esempio, poi si rifinisce insieme. Prossima lezione: dare a Claude la conoscenza della tua impresa, una volta sola."}]}, {"id": "l3", "n": "03", "mins": 3, "title": "La conoscenza dell'azienda, in un solo posto", "slides": [{"t": "title", "h": "La conoscenza dell'azienda, in un solo posto", "p": "Smetti di rispiegare la tua impresa in ogni conversazione."}, {"t": "text", "h": "I Progetti: una stanza per ogni parte del tuo lavoro", "p": "In Claude, un Progetto contiene documenti e istruzioni che imposti una volta sola. Ogni conversazione al suo interno li conosce già."}, {"t": "list", "h": "Cosa metterci dentro", "items": ["Listino prezzi, orari, regole", "Le domande più frequenti e le risposte giuste", "Esempi di testi con il tuo tono di voce", "Menu, catalogo o descrizione dei servizi"]}, {"t": "example", "h": "Scrivi le istruzioni una volta", "p": "Regole brevi e chiare funzionano meglio.", "ex": "Rispondi come lo staff della Trattoria Da Giulia. Rispondi nella lingua del cliente. Sii cordiale e breve. Non confermare mai tu una prenotazione: proponi degli orari e di' che confermeremo entro un'ora."}, {"t": "list", "h": "Perché resti utile", "items": ["Un progetto per area: clienti, fornitori, marketing", "Aggiorna i documenti quando cambiano prezzi o orari", "Tieni fuori i dati riservati, salvo che il tuo piano e le tue regole lo consentano"]}, {"t": "prompt", "h": "Prova tu", "p": "Crea un progetto chiamato «Risposte ai clienti», aggiungi FAQ e listino, incolla le istruzioni qui sopra e provalo con un messaggio vero:", "prompt": "Un cliente ha scritto questo: [incolla]. Scrivi la nostra risposta usando le informazioni del progetto. Dimmi se nei nostri documenti manca qualcosa."}, {"t": "end", "h": "In una riga", "p": "Imposta la tua conoscenza una volta, e ogni risposta parte dalla tua impresa. È la base di tutto il resto."}]}]</script>
 
 <footer class="site-footer">
   <div class="foot-brand">

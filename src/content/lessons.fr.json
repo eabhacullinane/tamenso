@@ -1,0 +1,38 @@
+[
+  {
+    "id": "l1", "n": "01", "mins": 3, "title": "Ce que l'IA peut faire pour vous, et ce qu'elle ne peut pas",
+    "slides": [
+      {"t": "title", "h": "Ce que l'IA peut faire pour vous, et ce qu'elle ne peut pas", "p": "Trois minutes pour savoir où Claude vous fait gagner du temps, et où vous gardez la main."},
+      {"t": "text", "h": "Imaginez un assistant rapide et cultivé, fait pour les mots", "p": "Claude lit, écrit, résume, traduit et classe les textes très bien. Tout ce que votre équipe fait avec des e-mails, des documents et des messages est un bon point de départ."},
+      {"t": "list", "h": "Où il fait gagner du temps dès cette semaine", "items": ["Les réponses aux questions que vous recevez tous les jours", "Cartes, fiches produits et posts en trois langues", "Premiers jets de devis et de propositions", "Des notes de réunion transformées en liste de tâches"]},
+      {"t": "list", "h": "Ce qu'il ne peut pas faire seul", "items": ["Connaître vos prix, vos clients ou vos stocks si vous ne les lui donnez pas", "Avoir toujours raison : il peut sembler sûr de lui et se tromper", "Décider à votre place : le dernier mot reste le vôtre"]},
+      {"t": "example", "h": "Traitez-le comme le brouillon d'un nouveau collègue", "p": "Relisez avant d'envoyer. Vérifiez les chiffres, les noms, les dates et tout ce que vous ne voudriez pas rater.", "ex": "40 e-mails fournisseurs → un résumé d'une page : ce qui est en retard, ce qui a changé, ce qui attend une réponse. Vous le vérifiez en 5 minutes au lieu de lire pendant une heure."},
+      {"t": "prompt", "h": "À vous", "p": "Collez quelques vrais e-mails reçus cette semaine et utilisez ceci :", "prompt": "Voici 5 e-mails reçus cette semaine. Regroupe-les par sujet, dis-moi lesquels demandent une réponse aujourd'hui et rédige pour chacun une réponse courte, chaleureuse et professionnelle."},
+      {"t": "end", "h": "En une ligne", "p": "Claude rédige, classe et traduit ; vous vérifiez et décidez. Prochaine leçon : bien demander."}
+    ]
+  },
+  {
+    "id": "l2", "n": "02", "mins": 3, "title": "Bien demander",
+    "slides": [
+      {"t": "title", "h": "Bien demander", "p": "La qualité de la réponse dépend de la qualité de la demande. Voici comment briefer Claude comme un bon collègue."},
+      {"t": "list", "h": "Une bonne demande a quatre parties", "items": ["Le contexte : qui vous êtes, pour qui c'est", "La tâche : ce que vous voulez, précisément", "Les limites : longueur, ton, langue", "Un exemple de ce que vous aimez"]},
+      {"t": "compare", "h": "Avant et après", "before": "Écris une description pour la carte.", "after": "Je tiens une trattoria familiale à Bologne. Écris 3 descriptions pour la carte (20 mots maximum chacune) pour nos tagliatelle al ragù, en italien et en anglais. Chaleureux, pas pompeux. En voici une que nous aimons : « Le ragù du dimanche de la nonna, mijoté six heures. »"},
+      {"t": "text", "h": "Puis répondez-lui", "p": "La première réponse est un point de départ. Dites « plus court », « plus formel », « donne-moi trois options » ou « garde la deuxième et change la fin ». Deux ou trois échanges suffisent en général."},
+      {"t": "list", "h": "De petites habitudes qui aident", "items": ["Collez la vraie matière : l'e-mail, la grille tarifaire, les notes", "Demandez-lui de vous poser des questions s'il manque quelque chose", "Dites ce qu'il faut éviter, pas seulement ce que vous voulez"]},
+      {"t": "prompt", "h": "À vous", "p": "Choisissez un texte que vous écrivez souvent et complétez les crochets :", "prompt": "Je dirige [votre entreprise] à [ville]. Écris [quoi] pour [qui], en [langue], [longueur] maximum. Le ton doit être [ton]. Voici un exemple que nous aimons : [coller]. Avant de commencer, pose-moi toutes les questions nécessaires."},
+      {"t": "end", "h": "En une ligne", "p": "Contexte, tâche, limites, exemple, puis on affine ensemble. Prochaine leçon : donner une fois pour toutes à Claude le savoir de votre entreprise."}
+    ]
+  },
+  {
+    "id": "l3", "n": "03", "mins": 3, "title": "Le savoir de l'entreprise, au même endroit",
+    "slides": [
+      {"t": "title", "h": "Le savoir de l'entreprise, au même endroit", "p": "Arrêtez de réexpliquer votre entreprise à chaque conversation."},
+      {"t": "text", "h": "Les Projets : une pièce pour chaque partie de votre travail", "p": "Dans Claude, un Projet contient des documents et des consignes que vous définissez une seule fois. Chaque conversation à l'intérieur les connaît déjà."},
+      {"t": "list", "h": "Quoi y mettre", "items": ["Grille tarifaire, horaires, conditions", "Les questions les plus fréquentes et les bonnes réponses", "Des exemples de textes dans votre ton", "Carte, catalogue ou description des services"]},
+      {"t": "example", "h": "Écrivez les consignes une fois", "p": "Des règles courtes et claires marchent le mieux.", "ex": "Tu réponds au nom de l'équipe de la Trattoria Da Giulia. Réponds dans la langue du client. Sois chaleureux et bref. Ne confirme jamais toi-même une réservation : propose des horaires et dis que nous confirmerons dans l'heure."},
+      {"t": "list", "h": "Pour que ça reste utile", "items": ["Un projet par domaine : clients, fournisseurs, marketing", "Mettez à jour les documents quand les prix ou les horaires changent", "Gardez les données confidentielles à l'écart, sauf si votre offre et vos règles le permettent"]},
+      {"t": "prompt", "h": "À vous", "p": "Créez un projet « Réponses clients », ajoutez votre FAQ et vos tarifs, collez les consignes ci-dessus, puis testez avec un vrai message :", "prompt": "Un client a écrit ceci : [coller]. Rédige notre réponse avec les informations du projet. Dis-moi s'il manque quelque chose dans nos documents."},
+      {"t": "end", "h": "En une ligne", "p": "Posez votre savoir une fois, et chaque réponse part de votre entreprise. C'est la base de tout le reste."}
+    ]
+  }
+]
