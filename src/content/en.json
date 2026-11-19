@@ -54,7 +54,7 @@
   "method.m1.title": "Listen",
   "method.m1.text": "An online call with you and your team to see how the work really gets done, and where it gets stuck.",
   "method.m2.title": "Build",
-  "method.m2.text": "I set up the AI and the automations on what you already use, starting with one task that saves real time.",
+  "method.m2.text": "I set up the AI, the automations or your new website on what you already use, starting with one thing that saves real time.",
   "method.m3.title": "Stay",
   "method.m3.text": "I train your people, write everything down, and stay reachable. Tools change; you shouldn't have to start over.",
   "academy.eyebrow": "Táménso Academy · free lessons",
@@ -137,5 +137,10 @@
   "sec.p9": "Order management",
   "sec.p10": "Reservations & bookings",
   "sec.p11": "Invoices & payment reminders",
-  "sec.p12": "Staff schedules & stock"
+  "sec.p12": "Staff schedules & stock",
+  "offer.o4.kind": "Website",
+  "offer.o4.title": "Your website",
+  "offer.o4.price": "from €900",
+  "offer.o4.text": "A fast, beautiful site in one or more languages, with booking and contact, hosted free. Five pages in two languages: €1,800.",
+  "offer.pay": "Payment: training is paid when you book. Websites: 40% to start, 40% at design approval, 20% at launch, or 3 monthly payments at no extra cost. Monthly plans are billed on the 1st."
 }

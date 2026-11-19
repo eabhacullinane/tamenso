@@ -54,7 +54,7 @@
   "method.m1.title": "Écouter",
   "method.m1.text": "Un appel en ligne avec vous et votre équipe pour voir comment le travail se fait vraiment, et où il coince.",
   "method.m2.title": "Construire",
-  "method.m2.text": "J'installe l'IA et les automatisations sur ce que vous utilisez déjà, en commençant par une tâche qui fait gagner du vrai temps.",
+  "method.m2.text": "J'installe l'IA, les automatisations ou votre nouveau site sur ce que vous utilisez déjà, en commençant par ce qui fait gagner du vrai temps.",
   "method.m3.title": "Rester",
   "method.m3.text": "Je forme vos équipes, je documente tout et je reste joignable. Les outils changent ; vous ne devriez pas avoir à tout recommencer.",
   "academy.eyebrow": "Táménso Academy · leçons gratuites",
@@ -137,5 +137,10 @@
   "sec.p9": "Gestion des commandes",
   "sec.p10": "Réservations",
   "sec.p11": "Factures et relances de paiement",
-  "sec.p12": "Plannings et stocks"
+  "sec.p12": "Plannings et stocks",
+  "offer.o4.kind": "Site web",
+  "offer.o4.title": "Votre site web",
+  "offer.o4.price": "dès 900 €",
+  "offer.o4.text": "Un site rapide et soigné, en une ou plusieurs langues, avec réservation et contact, hébergé gratuitement. Cinq pages en deux langues : 1 800 €.",
+  "offer.pay": "Paiement : la formation se règle à la réservation. Sites web : 40 % au démarrage, 40 % à la validation du design, 20 % à la mise en ligne, ou en 3 mensualités sans frais. Les forfaits mensuels sont prélevés le 1er du mois."
 }

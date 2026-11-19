@@ -54,7 +54,7 @@
   "method.m1.title": "Ascoltare",
   "method.m1.text": "Una call online con te e il tuo team per capire come si lavora davvero, e dove ci si blocca.",
   "method.m2.title": "Costruire",
-  "method.m2.text": "Configuro l'IA e le automazioni su ciò che usi già, partendo da un'attività che fa risparmiare tempo vero.",
+  "method.m2.text": "Configuro l'IA, le automazioni o il tuo nuovo sito su ciò che usi già, partendo da una cosa che fa risparmiare tempo vero.",
   "method.m3.title": "Restare",
   "method.m3.text": "Formo le persone, metto tutto per iscritto e resto raggiungibile. Gli strumenti cambiano; tu non dovresti ricominciare da capo.",
   "academy.eyebrow": "Táménso Academy · lezioni gratuite",
@@ -137,5 +137,10 @@
   "sec.p9": "Gestione degli ordini",
   "sec.p10": "Prenotazioni",
   "sec.p11": "Fatture e solleciti di pagamento",
-  "sec.p12": "Turni del personale e magazzino"
+  "sec.p12": "Turni del personale e magazzino",
+  "offer.o4.kind": "Sito web",
+  "offer.o4.title": "Il tuo sito web",
+  "offer.o4.price": "da 900 €",
+  "offer.o4.text": "Un sito veloce e curato, in una o più lingue, con prenotazione e contatti, ospitato gratuitamente. Cinque pagine in due lingue: 1.800 €.",
+  "offer.pay": "Pagamento: la formazione si paga alla prenotazione. Siti web: 40% all'avvio, 40% all'approvazione del design, 20% alla messa online, oppure in 3 rate mensili senza costi aggiuntivi. I piani mensili si pagano il 1° del mese."
 }

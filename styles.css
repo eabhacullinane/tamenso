@@ -477,7 +477,9 @@ p.eyebrow, .eyebrow {
 
 /* ---------------- OFFER ---------------- */
 .offer { max-width: var(--wrap); margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) var(--pad) clamp(5rem, 10vw, 8rem); }
-.offer-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.offer-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
+.paynote { margin-top: 1.4rem; font-weight: 300; font-size: .92rem; color: var(--muted); line-height: 1.6; }
+@media (max-width: 1100px) { .offer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .card {
   background: var(--paper); border: 1px solid var(--line); border-radius: 8px;
   padding: 2rem 1.8rem; display: flex; flex-direction: column; gap: .7rem;
