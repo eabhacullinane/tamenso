@@ -40,6 +40,7 @@
   <a class="word" href="{{path}}" aria-label="Táménso">Táménso</a>
   <nav class="nav-links" aria-label="{{nav.label}}">
     <a href="#rooms">{{nav.rooms}}</a>
+    <a href="#offer">{{nav.offer}}</a>
     <a href="#academy">{{nav.academy}}</a>
     <a href="#about">{{nav.about}}</a>
     <a href="#contact" class="nav-cta">{{nav.contact}}</a>
@@ -146,6 +147,35 @@
     </div>
   </section>
 
+
+  <!-- ============ BY SECTOR / BY PROBLEM ============ -->
+  <section class="sectors" id="sectors" aria-labelledby="sectors-h">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{sec.eyebrow}}</p>
+      <h2 id="sectors-h">{{sec.title}}</h2>
+      <p class="intro">{{sec.intro}}</p>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-col reveal">
+        <h3>{{sec.bysector}}</h3>
+        <ul class="sec-list">
+          <li><strong>{{sec.s1.t}}</strong><span>{{sec.s1.d}}</span></li>
+          <li><strong>{{sec.s2.t}}</strong><span>{{sec.s2.d}}</span></li>
+          <li><strong>{{sec.s3.t}}</strong><span>{{sec.s3.d}}</span></li>
+          <li><strong>{{sec.s4.t}}</strong><span>{{sec.s4.d}}</span></li>
+        </ul>
+      </div>
+      <div class="sec-col reveal">
+        <h3>{{sec.byproblem}}</h3>
+        <ul class="chips">
+          <li>{{sec.p1}}</li><li>{{sec.p2}}</li><li>{{sec.p3}}</li><li>{{sec.p4}}</li>
+          <li>{{sec.p5}}</li><li>{{sec.p6}}</li><li>{{sec.p7}}</li><li>{{sec.p8}}</li>
+        </ul>
+        <p class="sec-note">{{sec.note}}</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ METHOD ============ -->
   <section class="method" aria-labelledby="method-h">
     <div class="section-head reveal">
@@ -159,6 +189,40 @@
     </ol>
   </section>
 
+
+  <!-- ============ OFFER & PRICES ============ -->
+  <section class="offer" id="offer" aria-labelledby="offer-h">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{offer.eyebrow}}</p>
+      <h2 id="offer-h">{{offer.title}}</h2>
+      <p class="intro">{{offer.intro}}</p>
+    </div>
+    <div class="offer-grid">
+      <article class="card reveal">
+        <p class="card-kind">{{offer.o1.kind}}</p>
+        <h3>{{offer.o1.title}}</h3>
+        <p class="price">{{offer.o1.price}}</p>
+        <p>{{offer.o1.text}}</p>
+      </article>
+      <article class="card card-dark reveal">
+        <p class="card-kind">{{offer.o2.kind}}</p>
+        <h3>{{offer.o2.title}}</h3>
+        <p class="price">{{offer.o2.price}}</p>
+        <p>{{offer.o2.text}}</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-kind">{{offer.o3.kind}}</p>
+        <h3>{{offer.o3.title}}</h3>
+        <p class="price">{{offer.o3.price}}</p>
+        <p>{{offer.o3.text}}</p>
+      </article>
+    </div>
+    <div class="pilot reveal">
+      <p><strong>{{offer.pilot.title}}</strong> {{offer.pilot.text}}</p>
+      <a class="btn btn-ink" href="#contact">{{offer.pilot.cta}}</a>
+    </div>
+  </section>
+
   <!-- ============ ACADEMY ============ -->
   <section class="academy" id="academy" aria-labelledby="academy-h">
     <div class="academy-inner">
@@ -166,7 +230,10 @@
         <p class="eyebrow">{{academy.eyebrow}}</p>
         <h2 id="academy-h">{{academy.title}}</h2>
         <p class="intro">{{academy.intro}}</p>
-        <a class="btn btn-ink" href="mailto:eabha@tamenso.com?subject={{academy.mailsubject}}">{{academy.cta}}</a>
+        <div class="ctas">
+          <a class="btn btn-ink" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank">{{academy.cta2}}</a>
+          <a class="btn btn-line" href="mailto:eabha@tamenso.com?subject={{academy.mailsubject}}">{{academy.cta}}</a>
+        </div>
       </div>
       <ol class="modules">
         <li class="reveal"><span class="mod-n">01</span><div><h3>{{academy.c1.title}}</h3><p>{{academy.c1.text}}</p></div></li>
