@@ -193,40 +193,59 @@
   </section>
 
 
-  <!-- ============ OFFER & PRICES ============ -->
-  <section class="offer" id="offer" aria-labelledby="offer-h">
+  <!-- ============ YOUR PATH (doors) ============ -->
+  <section class="paths" id="offer" aria-labelledby="offer-h">
     <div class="section-head reveal">
-      <p class="eyebrow">{{offer.eyebrow}}</p>
-      <h2 id="offer-h">{{offer.title}}</h2>
-      <p class="intro">{{offer.intro}}</p>
+      <p class="eyebrow">{{paths.eyebrow}}</p>
+      <h2 id="offer-h">{{paths.title}}</h2>
+      <p class="intro">{{paths.intro}}</p>
     </div>
-    <div class="offer-grid">
-      <article class="card reveal tilt">
-        <p class="card-kind">{{offer.o1.kind}}</p>
-        <h3>{{offer.o1.title}}</h3>
-        <p class="price">{{offer.o1.price}}</p>
-        <p>{{offer.o1.text}}</p>
-      </article>
-      <article class="card card-dark reveal tilt">
-        <p class="card-kind">{{offer.o2.kind}}</p>
-        <h3>{{offer.o2.title}}</h3>
-        <p class="price">{{offer.o2.price}}</p>
-        <p>{{offer.o2.text}}</p>
-      </article>
-      <article class="card reveal tilt">
-        <p class="card-kind">{{offer.o4.kind}}</p>
-        <h3>{{offer.o4.title}}</h3>
-        <p class="price">{{offer.o4.price}}</p>
-        <p>{{offer.o4.text}}</p>
-      </article>
-      <article class="card reveal tilt">
-        <p class="card-kind">{{offer.o3.kind}}</p>
-        <h3>{{offer.o3.title}}</h3>
-        <p class="price">{{offer.o3.price}}</p>
-        <p>{{offer.o3.text}}</p>
-      </article>
+    <div class="pdoors">
+      <div class="pdoor reveal" data-door="a">
+        <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
+        <h3>{{paths.a.title}}</h3>
+        <p class="pdoor-sub">{{paths.a.sub}}</p>
+        <ul class="opts" role="list">
+            <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.a.o1}}</span><span class="opt-hint">{{paths.a.h1}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.a.o2}}</span><span class="opt-hint">{{paths.a.h2}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.a.o3}}</span><span class="opt-hint">{{paths.a.h3}}</span></button></li>
+        </ul>
+      </div>
+      <div class="pdoor reveal" data-door="b">
+        <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
+        <h3>{{paths.b.title}}</h3>
+        <p class="pdoor-sub">{{paths.b.sub}}</p>
+        <ul class="opts" role="list">
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.b.o1}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.b.o2}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.b.o3}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.b.o4}}</span></button></li>
+        </ul>
+      </div>
+      <div class="pdoor reveal" data-door="c">
+        <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
+        <h3>{{paths.c.title}}</h3>
+        <p class="pdoor-sub">{{paths.c.sub}}</p>
+        <ul class="opts" role="list">
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.c.o1}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.c.o2}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.c.o3}}</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.c.o4}}</span></button></li>
+        </ul>
+      </div>
     </div>
-    <p class="paynote reveal">{{offer.pay}}</p>
+    <div class="path-panel reveal" aria-live="polite"
+         data-subject="{{paths.mailsubject}}" data-hello="{{paths.mailhello}}">
+      <div class="path-head">
+        <p class="eyebrow light">{{paths.yours}}</p>
+        <p class="path-empty">{{paths.empty}}</p>
+        <ol class="path-list"></ol>
+      </div>
+      <div class="path-side">
+        <p class="path-note">{{paths.note}}</p>
+        <a class="btn btn-glow path-cta" href="mailto:eabha@tamenso.com?subject={{paths.mailsubject}}">{{paths.cta}}</a>
+      </div>
+    </div>
     <div class="pilot reveal">
       <p><strong>{{offer.pilot.title}}</strong> {{offer.pilot.text}}</p>
       <a class="btn btn-ink" href="#contact">{{offer.pilot.cta}}</a>

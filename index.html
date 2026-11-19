@@ -40,7 +40,7 @@
   <a class="word" href="/" aria-label="Táménso">Táménso</a>
   <nav class="nav-links" aria-label="Main">
     <a href="#rooms">What I do</a>
-    <a href="#offer">Prices</a>
+    <a href="#offer">Your path</a>
     <a href="#academy">Academy</a>
     <a href="#about">About</a>
     <a href="#contact" class="nav-cta">Get in touch</a>
@@ -193,40 +193,59 @@
   </section>
 
 
-  <!-- ============ OFFER & PRICES ============ -->
-  <section class="offer" id="offer" aria-labelledby="offer-h">
+  <!-- ============ YOUR PATH (doors) ============ -->
+  <section class="paths" id="offer" aria-labelledby="offer-h">
     <div class="section-head reveal">
-      <p class="eyebrow">Prices</p>
-      <h2 id="offer-h">Simple, and online</h2>
-      <p class="intro">Everything happens online, so it works wherever your business is. VAT not applicable (art. 293 B CGI).</p>
+      <p class="eyebrow">Your path</p>
+      <h2 id="offer-h">Choose your door. Combine the rooms.</h2>
+      <p class="intro">Every business starts somewhere different. Open the doors that fit you and pick what you need; the price is built around your combination.</p>
     </div>
-    <div class="offer-grid">
-      <article class="card reveal tilt">
-        <p class="card-kind">Training</p>
-        <h3>Online working session</h3>
-        <p class="price">€300–400</p>
-        <p>A hands-on session with you on your sector or one problem. You leave with prompts and routines you can use the next morning.</p>
-      </article>
-      <article class="card card-dark reveal tilt">
-        <p class="card-kind">Setup</p>
-        <h3>Your own Claude assistant</h3>
-        <p class="price">€400</p>
-        <p>An assistant built for your business: your information, your tone, your recurring tasks, with a short guide on using it.</p>
-      </article>
-      <article class="card reveal tilt">
-        <p class="card-kind">Website</p>
-        <h3>Your website</h3>
-        <p class="price">from €900</p>
-        <p>A fast, beautiful site in one or more languages, with booking and contact, hosted free. Five pages in two languages: €1,800.</p>
-      </article>
-      <article class="card reveal tilt">
-        <p class="card-kind">Monthly</p>
-        <h3>Outreach accompaniment</h3>
-        <p class="price">Monthly fee</p>
-        <p>LinkedIn profile, Waalaxy campaigns and follow-up, month after month. Price depends on volume; ask me.</p>
-      </article>
+    <div class="pdoors">
+      <div class="pdoor reveal" data-door="a">
+        <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
+        <h3>I&#x27;m new to Claude</h3>
+        <p class="pdoor-sub">Start from zero, at your pace</p>
+        <ul class="opts" role="list">
+            <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">Set up my account together</span><span class="opt-hint">One session: account, first project, first useful task</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">First steps</span><span class="opt-hint">A few sessions to build the daily habits</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">Full accompaniment</span><span class="opt-hint">The four-month structure, until you run it alone</span></button></li>
+        </ul>
+      </div>
+      <div class="pdoor reveal" data-door="b">
+        <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
+        <h3>I already use Claude</h3>
+        <p class="pdoor-sub">Make it work for you every day</p>
+        <ul class="opts" role="list">
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">An assistant for my business</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">Automations for daily tasks</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">Connect my tools</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">A session on one problem</span></button></li>
+        </ul>
+      </div>
+      <div class="pdoor reveal" data-door="c">
+        <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
+        <h3>I want to be seen</h3>
+        <p class="pdoor-sub">Look the part, reach new clients</p>
+        <ul class="opts" role="list">
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">A website</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">Brand visuals &amp; logo</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">LinkedIn outreach</span></button></li>
+            <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">A newsletter</span></button></li>
+        </ul>
+      </div>
     </div>
-    <p class="paynote reveal">Payment: training is paid when you book. Websites: 40% to start, 40% at design approval, 20% at launch, or 3 monthly payments at no extra cost. Monthly plans are billed on the 1st.</p>
+    <div class="path-panel reveal" aria-live="polite"
+         data-subject="My Táménso path" data-hello="Hello Eabha, here is the path I&#x27;d like:">
+      <div class="path-head">
+        <p class="eyebrow light">Your path</p>
+        <p class="path-empty">Open a door to start building your path.</p>
+        <ol class="path-list"></ol>
+      </div>
+      <div class="path-side">
+        <p class="path-note">Prices depend on your combination. Send me your path and I&#x27;ll reply with a clear proposal within two working days.</p>
+        <a class="btn btn-glow path-cta" href="mailto:eabha@tamenso.com?subject=My Táménso path">Send me my path</a>
+      </div>
+    </div>
     <div class="pilot reveal">
       <p><strong>Pilot places open.</strong> A few first businesses get a reduced rate in exchange for an honest case study.</p>
       <a class="btn btn-ink" href="#contact">Ask for a pilot place</a>
