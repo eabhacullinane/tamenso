@@ -242,10 +242,80 @@
         <ol class="path-list"></ol>
       </div>
       <div class="path-side">
-        <p class="path-note">Le prix dépend de votre combinaison. Envoyez-moi votre parcours et je vous réponds avec une proposition claire sous deux jours ouvrés.</p>
-        <a class="btn btn-glow path-cta" href="mailto:eabha@tamenso.com?subject=Mon parcours Táménso">M&#x27;envoyer mon parcours</a>
+        <p class="path-note">Le prix dépend de votre combinaison. Parlez-moi un peu de votre entreprise et je vous réponds avec une proposition claire sous deux jours ouvrés.</p>
+        <a class="btn btn-glow path-cta" href="#brief">Suite : parlez-moi de vous</a>
       </div>
     </div>
+
+    <!-- ============ BRIEF: a short conversation ============ -->
+    <form class="brief" id="brief" novalidate
+          data-subject="Nouvelle demande depuis tamenso.com" data-path="Votre parcours" data-none="(aucune porte choisie)">
+      <div class="brief-head reveal">
+        <div class="avatar" aria-hidden="true">E</div>
+        <div>
+          <p class="eyebrow">Deux minutes</p>
+          <h3 class="brief-title">Faisons connaissance</h3>
+          <p class="brief-intro">Quelques questions rapides pour vous préparer quelque chose d&#x27;utile. Seuls votre nom et votre e-mail sont nécessaires ; le reste aide.</p>
+        </div>
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-name">Pour commencer, comment vous appelez-vous ?</label></p>
+        <input class="answer" id="f-name" name="name" data-label="Nom" autocomplete="name" required placeholder="Votre nom">
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-company">Enchantée ! Comment s&#x27;appelle votre entreprise, et que fait-elle ?</label></p>
+        <div class="row2">
+          <input class="answer" id="f-company" name="company" data-label="Entreprise" autocomplete="organization" placeholder="Nom de l&#x27;entreprise">
+          <select class="answer" name="sector" data-label="Secteur" aria-label="Secteur">
+            <option value="">Secteur</option>
+            <option>Restauration</option><option>Hôtellerie</option><option>Design et architecture</option><option>Mode et création</option><option>Autre</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">Combien de personnes y travaillent ?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Effectif" name="size" value="Moi seul·e"><span>Moi seul·e</span></label><label class="chip"><input type="radio" data-label="Effectif" name="size" value="2–9"><span>2–9</span></label><label class="chip"><input type="radio" data-label="Effectif" name="size" value="10–49"><span>10–49</span></label><label class="chip"><input type="radio" data-label="Effectif" name="size" value="50–249"><span>50–249</span></label><label class="chip"><input type="radio" data-label="Effectif" name="size" value="250+"><span>250+</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-city">Où êtes-vous basé·e ?</label></p>
+        <input class="answer" id="f-city" name="city" data-label="Lieu" autocomplete="address-level2" placeholder="Ville, pays">
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">Utilisez-vous déjà l&#x27;IA au travail ?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Utilise l&#x27;IA" name="ai" value="Pas encore"><span>Pas encore</span></label><label class="chip"><input type="radio" data-label="Utilise l&#x27;IA" name="ai" value="Un peu"><span>Un peu</span></label><label class="chip"><input type="radio" data-label="Utilise l&#x27;IA" name="ai" value="Tous les jours"><span>Tous les jours</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-needs">Maintenant le plus important : qu&#x27;est-ce qui vous prend trop de temps, ou qu&#x27;aimeriez-vous changer ?</label></p>
+        <textarea class="answer" id="f-needs" name="needs" data-label="Besoins" rows="5" placeholder="Par exemple : je réponds tous les jours aux mêmes e-mails de réservation, et j&#x27;aimerais un site en français et en anglais…"></textarea>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">Quand aimeriez-vous commencer ?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Démarrage" name="when" value="Dès que possible"><span>Dès que possible</span></label><label class="chip"><input type="radio" data-label="Démarrage" name="when" value="Dans les 3 prochains mois"><span>Dans les 3 prochains mois</span></label><label class="chip"><input type="radio" data-label="Démarrage" name="when" value="Je me renseigne"><span>Je me renseigne</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-email">Dernière question : comment vous joindre ?</label></p>
+        <div class="row2">
+          <input class="answer" id="f-email" name="email" data-label="E-mail" type="email" autocomplete="email" required placeholder="Votre e-mail">
+          <input class="answer" name="phone" data-label="Téléphone" type="tel" autocomplete="tel" placeholder="Téléphone (facultatif)" aria-label="Téléphone (facultatif)">
+        </div>
+      </div>
+
+      <div class="send reveal">
+        <p class="privacy">Ces informations servent uniquement à vous répondre. Rien n&#x27;est enregistré sur ce site.</p>
+        <button class="btn btn-glow send-btn" type="submit">Envoyer à Eabha <span aria-hidden="true">→</span></button>
+        <p class="form-error" role="alert" hidden>Il me faut juste votre nom et un e-mail valide pour vous répondre.</p>
+        <p class="thanks" role="status" hidden>Merci ! Votre messagerie devrait s&#x27;ouvrir avec tout déjà rempli : il suffit d&#x27;envoyer. Sinon, écrivez à eabha@tamenso.com.</p>
+      </div>
+    </form>
+
     <div class="pilot reveal">
       <p><strong>Places pilotes ouvertes.</strong> Les premières entreprises bénéficient d&#x27;un tarif réduit en échange d&#x27;une étude de cas honnête.</p>
       <a class="btn btn-ink" href="#contact">Demander une place pilote</a>

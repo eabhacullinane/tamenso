@@ -242,10 +242,80 @@
         <ol class="path-list"></ol>
       </div>
       <div class="path-side">
-        <p class="path-note">Prices depend on your combination. Send me your path and I&#x27;ll reply with a clear proposal within two working days.</p>
-        <a class="btn btn-glow path-cta" href="mailto:eabha@tamenso.com?subject=My Táménso path">Send me my path</a>
+        <p class="path-note">Prices depend on your combination. Tell me a little about your business and I&#x27;ll reply with a clear proposal within two working days.</p>
+        <a class="btn btn-glow path-cta" href="#brief">Next: tell me about you</a>
       </div>
     </div>
+
+    <!-- ============ BRIEF: a short conversation ============ -->
+    <form class="brief" id="brief" novalidate
+          data-subject="New request from tamenso.com" data-path="Your path" data-none="(no door chosen yet)">
+      <div class="brief-head reveal">
+        <div class="avatar" aria-hidden="true">E</div>
+        <div>
+          <p class="eyebrow">Two minutes</p>
+          <h3 class="brief-title">Let&#x27;s get to know each other</h3>
+          <p class="brief-intro">A few quick questions so I can prepare something useful for you. Only your name and email are needed; the rest helps.</p>
+        </div>
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-name">First of all, what&#x27;s your name?</label></p>
+        <input class="answer" id="f-name" name="name" data-label="Name" autocomplete="name" required placeholder="Your name">
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-company">Nice to meet you. What&#x27;s your business called, and what does it do?</label></p>
+        <div class="row2">
+          <input class="answer" id="f-company" name="company" data-label="Business" autocomplete="organization" placeholder="Business name">
+          <select class="answer" name="sector" data-label="Sector" aria-label="Sector">
+            <option value="">Sector</option>
+            <option>Food service</option><option>Hospitality</option><option>Design &amp; architecture</option><option>Fashion &amp; creative</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">How many people work there?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Team size" name="size" value="Just me"><span>Just me</span></label><label class="chip"><input type="radio" data-label="Team size" name="size" value="2–9"><span>2–9</span></label><label class="chip"><input type="radio" data-label="Team size" name="size" value="10–49"><span>10–49</span></label><label class="chip"><input type="radio" data-label="Team size" name="size" value="50–249"><span>50–249</span></label><label class="chip"><input type="radio" data-label="Team size" name="size" value="250+"><span>250+</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-city">Where are you based?</label></p>
+        <input class="answer" id="f-city" name="city" data-label="Location" autocomplete="address-level2" placeholder="City, country">
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">Do you already use AI at work?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Uses AI" name="ai" value="Not yet"><span>Not yet</span></label><label class="chip"><input type="radio" data-label="Uses AI" name="ai" value="A little"><span>A little</span></label><label class="chip"><input type="radio" data-label="Uses AI" name="ai" value="Every day"><span>Every day</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-needs">Now the important part: what takes too much time, or what would you love to change?</label></p>
+        <textarea class="answer" id="f-needs" name="needs" data-label="Needs" rows="5" placeholder="For example: I answer the same booking emails every day, and I&#x27;d like a website in English and Italian…"></textarea>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">When would you like to start?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Start" name="when" value="As soon as possible"><span>As soon as possible</span></label><label class="chip"><input type="radio" data-label="Start" name="when" value="In the next 3 months"><span>In the next 3 months</span></label><label class="chip"><input type="radio" data-label="Start" name="when" value="Just exploring"><span>Just exploring</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-email">Last one: how can I reach you?</label></p>
+        <div class="row2">
+          <input class="answer" id="f-email" name="email" data-label="Email" type="email" autocomplete="email" required placeholder="Your email">
+          <input class="answer" name="phone" data-label="Phone" type="tel" autocomplete="tel" placeholder="Phone (optional)" aria-label="Phone (optional)">
+        </div>
+      </div>
+
+      <div class="send reveal">
+        <p class="privacy">I&#x27;ll only use this to reply to you. Nothing is stored on this site.</p>
+        <button class="btn btn-glow send-btn" type="submit">Send to Eabha <span aria-hidden="true">→</span></button>
+        <p class="form-error" role="alert" hidden>Just your name and a valid email, please, so I can reply.</p>
+        <p class="thanks" role="status" hidden>Thank you! Your email app should open with everything filled in; just press send. If it doesn&#x27;t, write to eabha@tamenso.com.</p>
+      </div>
+    </form>
+
     <div class="pilot reveal">
       <p><strong>Pilot places open.</strong> A few first businesses get a reduced rate in exchange for an honest case study.</p>
       <a class="btn btn-ink" href="#contact">Ask for a pilot place</a>

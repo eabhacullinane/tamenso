@@ -242,10 +242,80 @@
         <ol class="path-list"></ol>
       </div>
       <div class="path-side">
-        <p class="path-note">Il prezzo dipende dalla tua combinazione. Inviami il tuo percorso e ti rispondo con una proposta chiara entro due giorni lavorativi.</p>
-        <a class="btn btn-glow path-cta" href="mailto:eabha@tamenso.com?subject=Il mio percorso Táménso">Inviami il mio percorso</a>
+        <p class="path-note">Il prezzo dipende dalla tua combinazione. Raccontami qualcosa della tua impresa e ti rispondo con una proposta chiara entro due giorni lavorativi.</p>
+        <a class="btn btn-glow path-cta" href="#brief">Avanti: raccontami di te</a>
       </div>
     </div>
+
+    <!-- ============ BRIEF: a short conversation ============ -->
+    <form class="brief" id="brief" novalidate
+          data-subject="Nuova richiesta da tamenso.com" data-path="Il tuo percorso" data-none="(nessuna porta scelta)">
+      <div class="brief-head reveal">
+        <div class="avatar" aria-hidden="true">E</div>
+        <div>
+          <p class="eyebrow">Due minuti</p>
+          <h3 class="brief-title">Conosciamoci</h3>
+          <p class="brief-intro">Qualche domanda veloce per prepararti qualcosa di utile. Servono solo nome ed email; il resto aiuta.</p>
+        </div>
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-name">Prima di tutto, come ti chiami?</label></p>
+        <input class="answer" id="f-name" name="name" data-label="Nome" autocomplete="name" required placeholder="Il tuo nome">
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-company">Piacere! Come si chiama la tua impresa e di cosa si occupa?</label></p>
+        <div class="row2">
+          <input class="answer" id="f-company" name="company" data-label="Impresa" autocomplete="organization" placeholder="Nome dell&#x27;impresa">
+          <select class="answer" name="sector" data-label="Settore" aria-label="Settore">
+            <option value="">Settore</option>
+            <option>Ristorazione</option><option>Ospitalità</option><option>Design e architettura</option><option>Moda e creativi</option><option>Altro</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">Quante persone ci lavorano?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Dimensione" name="size" value="Solo io"><span>Solo io</span></label><label class="chip"><input type="radio" data-label="Dimensione" name="size" value="2–9"><span>2–9</span></label><label class="chip"><input type="radio" data-label="Dimensione" name="size" value="10–49"><span>10–49</span></label><label class="chip"><input type="radio" data-label="Dimensione" name="size" value="50–249"><span>50–249</span></label><label class="chip"><input type="radio" data-label="Dimensione" name="size" value="250+"><span>250+</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-city">Dove si trova?</label></p>
+        <input class="answer" id="f-city" name="city" data-label="Luogo" autocomplete="address-level2" placeholder="Città, paese">
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">Usi già l&#x27;IA nel lavoro?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Usa l&#x27;IA" name="ai" value="Non ancora"><span>Non ancora</span></label><label class="chip"><input type="radio" data-label="Usa l&#x27;IA" name="ai" value="Un po&#x27;"><span>Un po&#x27;</span></label><label class="chip"><input type="radio" data-label="Usa l&#x27;IA" name="ai" value="Ogni giorno"><span>Ogni giorno</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-needs">Ora la parte importante: cosa ti fa perdere tempo, o cosa ti piacerebbe cambiare?</label></p>
+        <textarea class="answer" id="f-needs" name="needs" data-label="Esigenze" rows="5" placeholder="Per esempio: rispondo ogni giorno alle stesse email di prenotazione, e vorrei un sito in italiano e inglese…"></textarea>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">Quando vorresti iniziare?</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="Inizio" name="when" value="Il prima possibile"><span>Il prima possibile</span></label><label class="chip"><input type="radio" data-label="Inizio" name="when" value="Nei prossimi 3 mesi"><span>Nei prossimi 3 mesi</span></label><label class="chip"><input type="radio" data-label="Inizio" name="when" value="Sto solo esplorando"><span>Sto solo esplorando</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-email">Ultima domanda: come posso contattarti?</label></p>
+        <div class="row2">
+          <input class="answer" id="f-email" name="email" data-label="Email" type="email" autocomplete="email" required placeholder="La tua email">
+          <input class="answer" name="phone" data-label="Telefono" type="tel" autocomplete="tel" placeholder="Telefono (facoltativo)" aria-label="Telefono (facoltativo)">
+        </div>
+      </div>
+
+      <div class="send reveal">
+        <p class="privacy">Userò queste informazioni solo per risponderti. Nulla viene salvato su questo sito.</p>
+        <button class="btn btn-glow send-btn" type="submit">Invia a Eabha <span aria-hidden="true">→</span></button>
+        <p class="form-error" role="alert" hidden>Mi servono solo il tuo nome e un&#x27;email valida per poterti rispondere.</p>
+        <p class="thanks" role="status" hidden>Grazie! Dovrebbe aprirsi la tua email con tutto già compilato: basta premere invio. Se non succede, scrivi a eabha@tamenso.com.</p>
+      </div>
+    </form>
+
     <div class="pilot reveal">
       <p><strong>Posti pilota aperti.</strong> Le prime imprese hanno una tariffa ridotta in cambio di un caso studio sincero.</p>
       <a class="btn btn-ink" href="#contact">Chiedi un posto pilota</a>

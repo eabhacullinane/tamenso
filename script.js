@@ -114,7 +114,6 @@
     var opts = Array.prototype.slice.call(document.querySelectorAll('.opt'));
     var list = panel.querySelector('.path-list');
     var empty = panel.querySelector('.path-empty');
-    var cta = panel.querySelector('.path-cta');
     var refresh = function () {
       var picked = opts.filter(function (o) { return o.getAttribute('aria-pressed') === 'true'; });
       document.querySelectorAll('.pdoor').forEach(function (d) {
@@ -127,11 +126,6 @@
         list.appendChild(li);
       });
       empty.hidden = picked.length > 0;
-      cta.setAttribute('aria-disabled', picked.length ? 'false' : 'true');
-      var body = panel.getAttribute('data-hello') + '\n\n' +
-        picked.map(function (o) { return '- ' + o.querySelector('.opt-label').textContent; }).join('\n') + '\n';
-      cta.href = 'mailto:eabha@tamenso.com?subject=' + encodeURIComponent(panel.getAttribute('data-subject')) +
-        '&body=' + encodeURIComponent(body);
     };
     opts.forEach(function (o) {
       o.addEventListener('click', function () {
@@ -146,6 +140,45 @@
       });
     });
     refresh();
+  }
+
+  // Brief: the short conversation, sent as a ready-to-send email
+  var brief = document.getElementById('brief');
+  if (brief) {
+    var errBox = brief.querySelector('.form-error');
+    var thanks = brief.querySelector('.thanks');
+    var labelOf = function (el) { return el.getAttribute('data-label') || el.name; };
+    brief.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = brief.elements.name, email = brief.elements.email;
+      if (!name.value.trim() || !email.value.trim() || !email.checkValidity()) {
+        errBox.hidden = false;
+        (name.value.trim() ? email : name).focus();
+        return;
+      }
+      errBox.hidden = true;
+      var lines = [];
+      var picked = Array.prototype.map.call(document.querySelectorAll('.opt[aria-pressed="true"] .opt-label'),
+        function (l) { return l.textContent; });
+      lines.push(brief.getAttribute('data-path') + ': ' + (picked.length ? picked.join(' → ') : brief.getAttribute('data-none')));
+      lines.push('');
+      var done = {};
+      Array.prototype.forEach.call(brief.elements, function (el) {
+        if (!el.name || done[el.name]) return;
+        var v;
+        if (el.type === 'radio') {
+          done[el.name] = true;
+          var c = brief.querySelector('input[name="' + el.name + '"]:checked');
+          v = c ? c.value : '';
+        } else { v = el.value.trim(); }
+        if (v) lines.push(labelOf(el) + ': ' + v);
+      });
+      var subject = brief.getAttribute('data-subject') + ' · ' + name.value.trim() +
+        (brief.elements.company.value.trim() ? ' (' + brief.elements.company.value.trim() + ')' : '');
+      location.href = 'mailto:eabha@tamenso.com?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(lines.join('\n'));
+      thanks.hidden = false;
+    });
   }
 
   // Numbers count up when they come into view (keeps each language's format)

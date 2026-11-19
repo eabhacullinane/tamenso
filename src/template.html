@@ -243,9 +243,79 @@
       </div>
       <div class="path-side">
         <p class="path-note">{{paths.note}}</p>
-        <a class="btn btn-glow path-cta" href="mailto:eabha@tamenso.com?subject={{paths.mailsubject}}">{{paths.cta}}</a>
+        <a class="btn btn-glow path-cta" href="#brief">{{paths.cta}}</a>
       </div>
     </div>
+
+    <!-- ============ BRIEF: a short conversation ============ -->
+    <form class="brief" id="brief" novalidate
+          data-subject="{{brief.mailsubject}}" data-path="{{paths.yours}}" data-none="{{brief.nopath}}">
+      <div class="brief-head reveal">
+        <div class="avatar" aria-hidden="true">E</div>
+        <div>
+          <p class="eyebrow">{{brief.eyebrow}}</p>
+          <h3 class="brief-title">{{brief.title}}</h3>
+          <p class="brief-intro">{{brief.intro}}</p>
+        </div>
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-name">{{brief.q1}}</label></p>
+        <input class="answer" id="f-name" name="name" data-label="{{brief.l.name}}" autocomplete="name" required placeholder="{{brief.q1.ph}}">
+      </div>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-company">{{brief.q2}}</label></p>
+        <div class="row2">
+          <input class="answer" id="f-company" name="company" data-label="{{brief.l.company}}" autocomplete="organization" placeholder="{{brief.q2.ph}}">
+          <select class="answer" name="sector" data-label="{{brief.l.sector}}" aria-label="{{brief.q2.sector}}">
+            <option value="">{{brief.q2.sector}}</option>
+            <option>{{sec.s1.t}}</option><option>{{sec.s2.t}}</option><option>{{sec.s3.t}}</option><option>{{sec.s4.t}}</option><option>{{brief.other}}</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">{{brief.q3}}</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="{{brief.l.size}}" name="size" value="{{brief.size.1}}"><span>{{brief.size.1}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.size}}" name="size" value="{{brief.size.2}}"><span>{{brief.size.2}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.size}}" name="size" value="{{brief.size.3}}"><span>{{brief.size.3}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.size}}" name="size" value="{{brief.size.4}}"><span>{{brief.size.4}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.size}}" name="size" value="{{brief.size.5}}"><span>{{brief.size.5}}</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-city">{{brief.q4}}</label></p>
+        <input class="answer" id="f-city" name="city" data-label="{{brief.l.city}}" autocomplete="address-level2" placeholder="{{brief.q4.ph}}">
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">{{brief.q5}}</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="{{brief.l.ai}}" name="ai" value="{{brief.ai.1}}"><span>{{brief.ai.1}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.ai}}" name="ai" value="{{brief.ai.2}}"><span>{{brief.ai.2}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.ai}}" name="ai" value="{{brief.ai.3}}"><span>{{brief.ai.3}}</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-needs">{{brief.q6}}</label></p>
+        <textarea class="answer" id="f-needs" name="needs" data-label="{{brief.l.needs}}" rows="5" placeholder="{{brief.q6.ph}}"></textarea>
+      </div>
+
+      <fieldset class="q reveal">
+        <legend class="bubble">{{brief.q7}}</legend>
+        <div class="chips-row"><label class="chip"><input type="radio" data-label="{{brief.l.when}}" name="when" value="{{brief.when.1}}"><span>{{brief.when.1}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.when}}" name="when" value="{{brief.when.2}}"><span>{{brief.when.2}}</span></label><label class="chip"><input type="radio" data-label="{{brief.l.when}}" name="when" value="{{brief.when.3}}"><span>{{brief.when.3}}</span></label></div>
+      </fieldset>
+
+      <div class="q reveal">
+        <p class="bubble"><label for="f-email">{{brief.q8}}</label></p>
+        <div class="row2">
+          <input class="answer" id="f-email" name="email" data-label="{{brief.l.email}}" type="email" autocomplete="email" required placeholder="{{brief.q8.email}}">
+          <input class="answer" name="phone" data-label="{{brief.l.phone}}" type="tel" autocomplete="tel" placeholder="{{brief.q8.phone}}" aria-label="{{brief.q8.phone}}">
+        </div>
+      </div>
+
+      <div class="send reveal">
+        <p class="privacy">{{brief.privacy}}</p>
+        <button class="btn btn-glow send-btn" type="submit">{{brief.send}} <span aria-hidden="true">→</span></button>
+        <p class="form-error" role="alert" hidden>{{brief.error}}</p>
+        <p class="thanks" role="status" hidden>{{brief.thanks}}</p>
+      </div>
+    </form>
+
     <div class="pilot reveal">
       <p><strong>{{offer.pilot.title}}</strong> {{offer.pilot.text}}</p>
       <a class="btn btn-ink" href="#contact">{{offer.pilot.cta}}</a>
