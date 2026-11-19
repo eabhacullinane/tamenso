@@ -7,22 +7,13 @@
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Remember the language a visitor picks; on a first visit to the English
-  // root, gently send Italian/French browsers to their version (once).
+  // Remember the language a visitor picks (English is the default site).
   try {
     document.querySelectorAll('.langs a').forEach(function (a) {
       a.addEventListener('click', function () {
         localStorage.setItem('tamenso-lang', a.getAttribute('hreflang'));
       });
     });
-    var saved = localStorage.getItem('tamenso-lang');
-    var onRoot = location.pathname === '/' || location.pathname === '/index.html';
-    if (onRoot && !saved && !sessionStorage.getItem('tamenso-routed')) {
-      sessionStorage.setItem('tamenso-routed', '1');
-      var nav = (navigator.language || '').toLowerCase();
-      if (nav.indexOf('it') === 0) location.replace('/it/');
-      else if (nav.indexOf('fr') === 0) location.replace('/fr/');
-    }
   } catch (e) {}
 
   // Hairline under the sticky header once the page scrolls

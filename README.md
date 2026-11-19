@@ -3,6 +3,8 @@
 Static site, served free by GitHub Pages (custom domain in `CNAME`).
 
 ## Change the words
+English is the main site (`/`); Italian and French are versions at `/it/` and `/fr/`. Visitors are never redirected; they choose with EN · IT · FR.
+
 Edit `src/content/en.json`, `src/content/it.json` or `src/content/fr.json`, then run:
 
     python3 build.py
