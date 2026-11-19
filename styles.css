@@ -317,7 +317,10 @@ p.eyebrow, .eyebrow {
 .step-n { font-family: var(--display); color: var(--rust); font-size: 1rem; letter-spacing: .1em; }
 .steps h3 { font-size: 1.7rem; margin: .5rem 0 .8rem; }
 .steps p { font-weight: 300; line-height: 1.7; color: var(--ink-2); }
-@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.steps-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.step-n { text-transform: uppercase; font-size: .85rem !important; }
+@media (max-width: 1000px) { .steps-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .steps, .steps-4 { grid-template-columns: 1fr; } }
 
 /* ---------------- ACADEMY ---------------- */
 .academy { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
