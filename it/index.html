@@ -33,7 +33,7 @@
 }
 </script>
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">Vai al contenuto</a>
 
 <header class="site-nav" id="top">
@@ -55,27 +55,28 @@
 <main id="main" tabindex="-1">
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-text reveal">
-      <p class="eyebrow">IA e automazione per le piccole imprese · Online · in tutta Italia</p>
+  <section class="hero" id="hero">
+    <div class="tunnel" aria-hidden="true">
+      <div class="scene">
+        <div class="floor"></div>
+        <span class="ring" style="--i:0"></span><span class="ring" style="--i:1"></span><span class="ring" style="--i:2"></span><span class="ring" style="--i:3"></span><span class="ring" style="--i:4"></span><span class="ring" style="--i:5"></span><span class="ring" style="--i:6"></span><span class="ring" style="--i:7"></span><span class="ring" style="--i:8"></span><span class="ring" style="--i:9"></span><span class="ring" style="--i:10"></span><span class="ring" style="--i:11"></span><span class="ring" style="--i:12"></span><span class="ring" style="--i:13"></span>
+        <div class="core"></div>
+      </div>
+      <canvas class="dust"></canvas>
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow light">IA e automazione per le piccole imprese · Online · in tutta Italia</p>
       <h1>
         <span class="irish" lang="ga">Tá mé anseo.</span>
         <span class="gloss">In irlandese: «Sono qui».</span>
       </h1>
       <p class="lede">Aiuto le piccole e medie imprese a mettere l&#x27;intelligenza artificiale al lavoro: configurata bene, spiegata nella loro lingua, con qualcuno accanto finché non diventa un&#x27;abitudine.</p>
       <div class="ctas">
-        <a class="btn btn-ink" href="#contact">Fissa un primo incontro</a>
-        <a class="btn btn-line" href="#academy">Scopri l&#x27;Academy</a>
+        <a class="btn btn-glow" href="#contact">Fissa un primo incontro</a>
+        <a class="btn btn-ghost" href="#academy">Scopri l&#x27;Academy</a>
       </div>
     </div>
-    <div class="hero-door reveal" aria-hidden="true">
-      <div class="door">
-        <div class="door-light"></div>
-        <div class="door-grain"></div>
-        <span class="door-word">Táménso</span>
-      </div>
-      <p class="door-note">Una porta, molte stanze.</p>
-    </div>
+    <a class="scroll-cue" href="#rooms" aria-label="Cosa faccio"><span></span></a>
   </section>
 
   <!-- ============ WHY NOW ============ -->
@@ -85,15 +86,15 @@
       <h2 id="why-h" class="why-title reveal">La maggior parte delle PMI non ha ancora aperto questa porta. Chi lo fa, prende vantaggio.</h2>
       <div class="stats">
         <figure class="stat reveal">
-          <span class="num">16,4%</span>
+          <span class="num" data-count>16,4%</span>
           <figcaption>delle imprese italiane con almeno 10 addetti ha usato l&#x27;IA nel 2025: il doppio dell&#x27;anno prima. Oltre otto su dieci, ancora no.</figcaption>
         </figure>
         <figure class="stat reveal">
-          <span class="num">15,7% vs 53,1%</span>
+          <span class="num" data-count>15,7% vs 53,1%</span>
           <figcaption>L&#x27;uso dell&#x27;IA nelle PMI italiane rispetto alle grandi imprese. Il divario è di competenze e di tempo, non di dimensione.</figcaption>
         </figure>
         <figure class="stat reveal">
-          <span class="num">Art. 4</span>
+          <span class="num" data-count>Art. 4</span>
           <figcaption>Dal febbraio 2025 l&#x27;AI Act chiede a ogni impresa che usa l&#x27;IA nel lavoro di adottare misure perché il personale sappia usarla.</figcaption>
         </figure>
       </div>
@@ -109,7 +110,7 @@
       <p class="intro">Táménso è la casa. Ogni stanza è un modo in cui posso aiutarti, e se ne aprono di nuove man mano che il lavoro cresce.</p>
     </div>
     <div class="room-grid">
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">01</span><span class="tag tag-open">Aperta</span></div>
         <h3>Formazione Claude e il tuo assistente</h3>
         <p>Sessioni online per il tuo team, costruite sul tuo settore e sui tuoi problemi reali, e un assistente Claude configurato per la tua impresa.</p>
@@ -119,7 +120,7 @@
           <li>Guide scritte che restano al team</li>
         </ul>
       </article>
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">02</span><span class="tag tag-soon">Apre nel 2027</span></div>
         <h3>Táménso Academy</h3>
         <p>Brevi lezioni video gratuite, su Instagram e qui, in italiano, francese e inglese, per chi non viene dal mondo tech.</p>
@@ -129,7 +130,7 @@
           <li>Gratis, sempre</li>
         </ul>
       </article>
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">03</span><span class="tag tag-open">Aperta</span></div>
         <h3>Prospezione LinkedIn, accompagnata</h3>
         <p>Un accompagnamento mensile per studi, designer e piccoli team che vogliono trovare clienti su LinkedIn senza un reparto vendite.</p>
@@ -139,7 +140,7 @@
           <li>Una newsletter che viene davvero aperta</li>
         </ul>
       </article>
-      <article class="room room-closed reveal">
+      <article class="room room-closed reveal tilt">
         <div class="room-top"><span class="room-n">04</span><span class="tag tag-later">Più avanti</span></div>
         <h3>Altre stanze</h3>
         <p>Strategia, immobiliare e design: porte che si apriranno più avanti.</p>
@@ -198,19 +199,19 @@
       <p class="intro">Tutto si svolge online, ovunque si trovi la tua impresa. IVA non applicabile (art. 293 B CGI, regime francese).</p>
     </div>
     <div class="offer-grid">
-      <article class="card reveal">
+      <article class="card reveal tilt">
         <p class="card-kind">Formazione</p>
         <h3>Sessione di formazione online</h3>
         <p class="price">300–400 €</p>
         <p>Per il tuo team, sul tuo settore o su un problema. Ne esci con prompt e abitudini da usare già il giorno dopo.</p>
       </article>
-      <article class="card card-dark reveal">
+      <article class="card card-dark reveal tilt">
         <p class="card-kind">Configurazione</p>
         <h3>Il tuo assistente Claude su misura</h3>
         <p class="price">400 €</p>
         <p>Un assistente costruito per la tua impresa: le tue informazioni, il tuo tono, le tue attività ricorrenti, con una breve guida all&#x27;uso.</p>
       </article>
-      <article class="card reveal">
+      <article class="card reveal tilt">
         <p class="card-kind">Mensile</p>
         <h3>Accompagnamento alla prospezione</h3>
         <p class="price">Canone mensile</p>

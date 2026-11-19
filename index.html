@@ -33,7 +33,7 @@
 }
 </script>
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-nav" id="top">
@@ -55,27 +55,28 @@
 <main id="main" tabindex="-1">
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-text reveal">
-      <p class="eyebrow">AI &amp; automation for small businesses · Online · Italy first</p>
+  <section class="hero" id="hero">
+    <div class="tunnel" aria-hidden="true">
+      <div class="scene">
+        <div class="floor"></div>
+        <span class="ring" style="--i:0"></span><span class="ring" style="--i:1"></span><span class="ring" style="--i:2"></span><span class="ring" style="--i:3"></span><span class="ring" style="--i:4"></span><span class="ring" style="--i:5"></span><span class="ring" style="--i:6"></span><span class="ring" style="--i:7"></span><span class="ring" style="--i:8"></span><span class="ring" style="--i:9"></span><span class="ring" style="--i:10"></span><span class="ring" style="--i:11"></span><span class="ring" style="--i:12"></span><span class="ring" style="--i:13"></span>
+        <div class="core"></div>
+      </div>
+      <canvas class="dust"></canvas>
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow light">AI &amp; automation for small businesses · Online · Italy first</p>
       <h1>
         <span class="irish" lang="ga">Tá mé anseo.</span>
         <span class="gloss">Irish for “I am here.”</span>
       </h1>
       <p class="lede">I help small and medium businesses put AI to work: set up properly, explained in their own language, with someone beside them until it becomes a habit.</p>
       <div class="ctas">
-        <a class="btn btn-ink" href="#contact">Book a first conversation</a>
-        <a class="btn btn-line" href="#academy">See the Academy</a>
+        <a class="btn btn-glow" href="#contact">Book a first conversation</a>
+        <a class="btn btn-ghost" href="#academy">See the Academy</a>
       </div>
     </div>
-    <div class="hero-door reveal" aria-hidden="true">
-      <div class="door">
-        <div class="door-light"></div>
-        <div class="door-grain"></div>
-        <span class="door-word">Táménso</span>
-      </div>
-      <p class="door-note">One door, several rooms.</p>
-    </div>
+    <a class="scroll-cue" href="#rooms" aria-label="What I do"><span></span></a>
   </section>
 
   <!-- ============ WHY NOW ============ -->
@@ -85,15 +86,15 @@
       <h2 id="why-h" class="why-title reveal">Most small businesses haven&#x27;t opened this door yet. The ones that do pull ahead.</h2>
       <div class="stats">
         <figure class="stat reveal">
-          <span class="num">16.4%</span>
+          <span class="num" data-count>16.4%</span>
           <figcaption>of Italian companies with 10+ employees used AI in 2025, double the year before. More than eight in ten still don&#x27;t.</figcaption>
         </figure>
         <figure class="stat reveal">
-          <span class="num">15.7% vs 53.1%</span>
+          <span class="num" data-count>15.7% vs 53.1%</span>
           <figcaption>AI use among Italian SMEs versus large companies. The gap is skills and time, not size.</figcaption>
         </figure>
         <figure class="stat reveal">
-          <span class="num">Art. 4</span>
+          <span class="num" data-count>Art. 4</span>
           <figcaption>Since February 2025, the EU AI Act asks every business using AI at work to take steps so its people understand it.</figcaption>
         </figure>
       </div>
@@ -109,7 +110,7 @@
       <p class="intro">Táménso is the house. Each room is a way I can help, and new ones open as the work grows.</p>
     </div>
     <div class="room-grid">
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">01</span><span class="tag tag-open">Open</span></div>
         <h3>Claude training &amp; your own assistant</h3>
         <p>Online sessions for your team, built around your sector and your real problems, and a Claude assistant set up for your business.</p>
@@ -119,7 +120,7 @@
           <li>Written guides your team keeps</li>
         </ul>
       </article>
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">02</span><span class="tag tag-soon">Opening 2027</span></div>
         <h3>Táménso Academy</h3>
         <p>Short, free video lessons on Instagram and here, in Italian, French and English, for people who don&#x27;t come from tech.</p>
@@ -129,7 +130,7 @@
           <li>Free, always</li>
         </ul>
       </article>
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">03</span><span class="tag tag-open">Open</span></div>
         <h3>LinkedIn outreach, accompanied</h3>
         <p>Monthly accompaniment for studios, designers and small teams who want to find clients on LinkedIn without a sales department.</p>
@@ -139,7 +140,7 @@
           <li>A newsletter people actually open</li>
         </ul>
       </article>
-      <article class="room room-closed reveal">
+      <article class="room room-closed reveal tilt">
         <div class="room-top"><span class="room-n">04</span><span class="tag tag-later">Later</span></div>
         <h3>More rooms</h3>
         <p>Strategy, real estate and design: doors that will open later.</p>
@@ -198,19 +199,19 @@
       <p class="intro">Everything happens online, so it works wherever your business is. VAT not applicable (art. 293 B CGI).</p>
     </div>
     <div class="offer-grid">
-      <article class="card reveal">
+      <article class="card reveal tilt">
         <p class="card-kind">Training</p>
         <h3>Online training session</h3>
         <p class="price">€300–400</p>
         <p>For your team, on your sector or one problem. You leave with prompts and routines you use the next morning.</p>
       </article>
-      <article class="card card-dark reveal">
+      <article class="card card-dark reveal tilt">
         <p class="card-kind">Setup</p>
         <h3>Your own Claude assistant</h3>
         <p class="price">€400</p>
         <p>An assistant built for your business: your information, your tone, your recurring tasks, with a short guide on using it.</p>
       </article>
-      <article class="card reveal">
+      <article class="card reveal tilt">
         <p class="card-kind">Monthly</p>
         <h3>Outreach accompaniment</h3>
         <p class="price">Monthly fee</p>

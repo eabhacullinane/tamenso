@@ -33,7 +33,7 @@
 }
 </script>
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">{{nav.skip}}</a>
 
 <header class="site-nav" id="top">
@@ -55,27 +55,28 @@
 <main id="main" tabindex="-1">
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-text reveal">
-      <p class="eyebrow">{{hero.eyebrow}}</p>
+  <section class="hero" id="hero">
+    <div class="tunnel" aria-hidden="true">
+      <div class="scene">
+        <div class="floor"></div>
+        <span class="ring" style="--i:0"></span><span class="ring" style="--i:1"></span><span class="ring" style="--i:2"></span><span class="ring" style="--i:3"></span><span class="ring" style="--i:4"></span><span class="ring" style="--i:5"></span><span class="ring" style="--i:6"></span><span class="ring" style="--i:7"></span><span class="ring" style="--i:8"></span><span class="ring" style="--i:9"></span><span class="ring" style="--i:10"></span><span class="ring" style="--i:11"></span><span class="ring" style="--i:12"></span><span class="ring" style="--i:13"></span>
+        <div class="core"></div>
+      </div>
+      <canvas class="dust"></canvas>
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow light">{{hero.eyebrow}}</p>
       <h1>
         <span class="irish" lang="ga">Tá mé anseo.</span>
         <span class="gloss">{{hero.gloss}}</span>
       </h1>
       <p class="lede">{{hero.lede}}</p>
       <div class="ctas">
-        <a class="btn btn-ink" href="#contact">{{hero.cta1}}</a>
-        <a class="btn btn-line" href="#academy">{{hero.cta2}}</a>
+        <a class="btn btn-glow" href="#contact">{{hero.cta1}}</a>
+        <a class="btn btn-ghost" href="#academy">{{hero.cta2}}</a>
       </div>
     </div>
-    <div class="hero-door reveal" aria-hidden="true">
-      <div class="door">
-        <div class="door-light"></div>
-        <div class="door-grain"></div>
-        <span class="door-word">Táménso</span>
-      </div>
-      <p class="door-note">{{hero.note}}</p>
-    </div>
+    <a class="scroll-cue" href="#rooms" aria-label="{{nav.rooms}}"><span></span></a>
   </section>
 
   <!-- ============ WHY NOW ============ -->
@@ -85,15 +86,15 @@
       <h2 id="why-h" class="why-title reveal">{{why.title}}</h2>
       <div class="stats">
         <figure class="stat reveal">
-          <span class="num">{{why.s1.num}}</span>
+          <span class="num" data-count>{{why.s1.num}}</span>
           <figcaption>{{why.s1.text}}</figcaption>
         </figure>
         <figure class="stat reveal">
-          <span class="num">{{why.s2.num}}</span>
+          <span class="num" data-count>{{why.s2.num}}</span>
           <figcaption>{{why.s2.text}}</figcaption>
         </figure>
         <figure class="stat reveal">
-          <span class="num">{{why.s3.num}}</span>
+          <span class="num" data-count>{{why.s3.num}}</span>
           <figcaption>{{why.s3.text}}</figcaption>
         </figure>
       </div>
@@ -109,7 +110,7 @@
       <p class="intro">{{rooms.intro}}</p>
     </div>
     <div class="room-grid">
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">01</span><span class="tag tag-open">{{rooms.open}}</span></div>
         <h3>{{rooms.r1.title}}</h3>
         <p>{{rooms.r1.text}}</p>
@@ -119,7 +120,7 @@
           <li>{{rooms.r1.b3}}</li>
         </ul>
       </article>
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">02</span><span class="tag tag-soon">{{rooms.soon}}</span></div>
         <h3>{{rooms.r2.title}}</h3>
         <p>{{rooms.r2.text}}</p>
@@ -129,7 +130,7 @@
           <li>{{rooms.r2.b3}}</li>
         </ul>
       </article>
-      <article class="room reveal">
+      <article class="room reveal tilt">
         <div class="room-top"><span class="room-n">03</span><span class="tag tag-open">{{rooms.open}}</span></div>
         <h3>{{rooms.r3.title}}</h3>
         <p>{{rooms.r3.text}}</p>
@@ -139,7 +140,7 @@
           <li>{{rooms.r3.b3}}</li>
         </ul>
       </article>
-      <article class="room room-closed reveal">
+      <article class="room room-closed reveal tilt">
         <div class="room-top"><span class="room-n">04</span><span class="tag tag-later">{{rooms.later}}</span></div>
         <h3>{{rooms.r4.title}}</h3>
         <p>{{rooms.r4.text}}</p>
@@ -198,19 +199,19 @@
       <p class="intro">{{offer.intro}}</p>
     </div>
     <div class="offer-grid">
-      <article class="card reveal">
+      <article class="card reveal tilt">
         <p class="card-kind">{{offer.o1.kind}}</p>
         <h3>{{offer.o1.title}}</h3>
         <p class="price">{{offer.o1.price}}</p>
         <p>{{offer.o1.text}}</p>
       </article>
-      <article class="card card-dark reveal">
+      <article class="card card-dark reveal tilt">
         <p class="card-kind">{{offer.o2.kind}}</p>
         <h3>{{offer.o2.title}}</h3>
         <p class="price">{{offer.o2.price}}</p>
         <p>{{offer.o2.text}}</p>
       </article>
-      <article class="card reveal">
+      <article class="card reveal tilt">
         <p class="card-kind">{{offer.o3.kind}}</p>
         <h3>{{offer.o3.title}}</h3>
         <p class="price">{{offer.o3.price}}</p>
