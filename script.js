@@ -28,6 +28,43 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+
+  // Mobile menu
+  var menuBtn = document.querySelector('.menu-btn');
+  var navLinks = document.getElementById('nav-links');
+  if (menuBtn && navLinks) {
+    var setMenu = function (open) {
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navLinks.classList.toggle('open', open);
+    };
+    menuBtn.addEventListener('click', function () { setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'); });
+    navLinks.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.site-nav')) setMenu(false); });
+  }
+
+  // Links to the form put the cursor in the first question
+  document.querySelectorAll('a[href="#brief"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      setTimeout(function () { var f = document.getElementById('f-name'); if (f) f.focus({ preventScroll: true }); }, 650);
+    });
+  });
+  var bf = document.getElementById('brief');
+  if (bf) bf.addEventListener('input', function () { var er = bf.querySelector('.form-error'); if (er) er.hidden = true; });
+
+  // Floating "Find your path" on phones: after the hero, hidden near the doors, form and contact
+  var floatCta = document.querySelector('.float-cta');
+  if (floatCta && 'IntersectionObserver' in window) {
+    floatCta.hidden = false;
+    var seen = {};
+    var watch = ['hero', 'offer', 'contact'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    var fo = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
+      floatCta.classList.toggle('show', !seen.hero && !seen.offer && !seen.contact);
+    }, { threshold: 0 });
+    watch.forEach(function (el) { fo.observe(el); });
+  }
+
   // Corridor: steer with the mouse (or the phone's tilt)
   var scene = document.querySelector('.scene');
   if (scene && !reduce) {
@@ -126,6 +163,9 @@
         list.appendChild(li);
       });
       empty.hidden = picked.length > 0;
+      var count = panel.querySelector('.path-count'), reset = panel.querySelector('.path-reset');
+      if (count) { count.hidden = !picked.length; count.textContent = picked.length; }
+      if (reset) reset.hidden = !picked.length;
     };
     opts.forEach(function (o) {
       o.addEventListener('click', function () {
@@ -138,6 +178,11 @@
         o.setAttribute('aria-pressed', on ? 'true' : 'false');
         refresh();
       });
+    });
+    var resetBtn = panel.querySelector('.path-reset');
+    if (resetBtn) resetBtn.addEventListener('click', function () {
+      opts.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+      refresh();
     });
     refresh();
   }

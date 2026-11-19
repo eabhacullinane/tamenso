@@ -34,16 +34,21 @@
 </script>
 </head>
 <body class="home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <radialGradient id="g-door" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#F6D7A2"/><stop offset=".45" stop-color="#D99A52"/><stop offset="1" stop-color="#9A4A26"/></radialGradient>
+  <symbol id="mark" viewBox="0 0 100 130"><path d="M8 126V50a42 42 0 0 1 84 0v76" fill="none" stroke="currentColor" stroke-width="5"/><path d="M26 126V60a24 24 0 0 1 48 0v66z" fill="url(#g-door)"/><path d="M2 126h96" stroke="currentColor" stroke-width="5"/></symbol>
+</defs></svg>
 <a class="skip" href="#main">{{nav.skip}}</a>
 
 <header class="site-nav" id="top">
-  <a class="word" href="{{path}}" aria-label="Táménso">Táménso</a>
-  <nav class="nav-links" aria-label="{{nav.label}}">
+  <a class="word" href="{{path}}" aria-label="Táménso"><svg class="word-mark" aria-hidden="true"><use href="#mark"/></svg>Táménso</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links"><span class="menu-lines" aria-hidden="true"></span><span class="menu-label">{{nav.menu}}</span></button>
+  <nav class="nav-links" id="nav-links" aria-label="{{nav.label}}">
     <a href="#rooms">{{nav.rooms}}</a>
     <a href="#offer">{{nav.offer}}</a>
     <a href="#academy">{{nav.academy}}</a>
     <a href="#about">{{nav.about}}</a>
-    <a href="#contact" class="nav-cta">{{nav.contact}}</a>
+    <a href="#brief" class="nav-cta">{{nav.contact}}</a>
   </nav>
   <div class="langs" aria-label="{{nav.language}}">
     <a href="/" hreflang="en" lang="en" {{cur.en}}>EN</a>
@@ -72,7 +77,7 @@
       </h1>
       <p class="lede">{{hero.lede}}</p>
       <div class="ctas">
-        <a class="btn btn-glow" href="#contact">{{hero.cta1}}</a>
+        <a class="btn btn-glow" href="#offer">{{hero.cta1}}</a>
         <a class="btn btn-ghost" href="#academy">{{hero.cta2}}</a>
       </div>
     </div>
@@ -98,7 +103,7 @@
           <figcaption>{{why.s3.text}}</figcaption>
         </figure>
       </div>
-      <p class="sources">{{why.sources}}</p>
+      <p class="sources">{{why.srclabel}} <a href="{{why.srcurl}}" rel="noopener" target="_blank">{{why.srcname}}</a> · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" rel="noopener" target="_blank">{{why.actname}}</a></p>
     </div>
   </section>
 
@@ -142,6 +147,7 @@
       </article>
       <article class="room room-closed reveal tilt">
         <div class="room-top"><span class="room-n">04</span><span class="tag tag-later">{{rooms.later}}</span></div>
+        <div class="closed-door" aria-hidden="true"><span class="cd-leaf"></span><span class="cd-light"></span></div>
         <h3>{{rooms.r4.title}}</h3>
         <p>{{rooms.r4.text}}</p>
       </article>
@@ -160,10 +166,10 @@
       <div class="sec-col reveal">
         <h3>{{sec.bysector}}</h3>
         <ul class="sec-list">
-          <li><strong>{{sec.s1.t}}</strong></li>
-          <li><strong>{{sec.s2.t}}</strong></li>
-          <li><strong>{{sec.s3.t}}</strong></li>
-          <li><strong>{{sec.s4.t}}</strong></li>
+          <li><span class="sec-n">01</span><strong>{{sec.s1.t}}</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">02</span><strong>{{sec.s2.t}}</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">03</span><strong>{{sec.s3.t}}</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">04</span><strong>{{sec.s4.t}}</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
         </ul>
       </div>
       <div class="sec-col reveal">
@@ -205,6 +211,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>{{paths.a.title}}</h3>
         <p class="pdoor-sub">{{paths.a.sub}}</p>
+        <p class="pick">{{paths.pickone}}</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.a.o1}}</span><span class="opt-hint">{{paths.a.h1}}</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.a.o2}}</span><span class="opt-hint">{{paths.a.h2}}</span></button></li>
@@ -215,6 +222,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>{{paths.b.title}}</h3>
         <p class="pdoor-sub">{{paths.b.sub}}</p>
+        <p class="pick">{{paths.pickany}}</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.b.o1}}</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.b.o2}}</span></button></li>
@@ -226,6 +234,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>{{paths.c.title}}</h3>
         <p class="pdoor-sub">{{paths.c.sub}}</p>
+        <p class="pick">{{paths.pickany}}</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.c.o1}}</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">{{paths.c.o2}}</span></button></li>
@@ -237,7 +246,7 @@
     <div class="path-panel reveal" aria-live="polite"
          data-subject="{{paths.mailsubject}}" data-hello="{{paths.mailhello}}">
       <div class="path-head">
-        <p class="eyebrow light">{{paths.yours}}</p>
+        <div class="path-top"><p class="eyebrow light">{{paths.yours}} <span class="path-count" hidden></span></p><button type="button" class="path-reset" hidden>{{paths.reset}}</button></div>
         <p class="path-empty">{{paths.empty}}</p>
         <ol class="path-list"></ol>
       </div>
@@ -260,7 +269,7 @@
       </div>
 
       <div class="q reveal">
-        <p class="bubble"><label for="f-name">{{brief.q1}}</label></p>
+        <p class="bubble"><label for="f-name">{{brief.q1}} <span class="req" title="{{brief.required}}">*</span></label></p>
         <input class="answer" id="f-name" name="name" data-label="{{brief.l.name}}" autocomplete="name" required placeholder="{{brief.q1.ph}}">
       </div>
 
@@ -301,7 +310,7 @@
       </fieldset>
 
       <div class="q reveal">
-        <p class="bubble"><label for="f-email">{{brief.q8}}</label></p>
+        <p class="bubble"><label for="f-email">{{brief.q8}} <span class="req" title="{{brief.required}}">*</span></label></p>
         <div class="row2">
           <input class="answer" id="f-email" name="email" data-label="{{brief.l.email}}" type="email" autocomplete="email" required placeholder="{{brief.q8.email}}">
           <input class="answer" name="phone" data-label="{{brief.l.phone}}" type="tel" autocomplete="tel" placeholder="{{brief.q8.phone}}" aria-label="{{brief.q8.phone}}">
@@ -310,7 +319,7 @@
 
       <div class="send reveal">
         <p class="privacy">{{brief.privacy}}</p>
-        <button class="btn btn-glow send-btn" type="submit">{{brief.send}} <span aria-hidden="true">→</span></button>
+        <button class="btn btn-glow send-btn" type="submit"><span>{{brief.send}}</span><span class="arr" aria-hidden="true">→</span></button>
         <p class="form-error" role="alert" hidden>{{brief.error}}</p>
         <p class="thanks" role="status" hidden>{{brief.thanks}}</p>
       </div>
@@ -333,6 +342,12 @@
           <a class="btn btn-ink" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank">{{academy.cta2}}</a>
           <a class="btn btn-line" href="mailto:eabha@tamenso.com?subject={{academy.mailsubject}}">{{academy.cta}}</a>
         </div>
+        <a class="video-frame" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank" aria-label="{{academy.cta2}}">
+          <span class="vf-tag">{{academy.vftag}}</span>
+          <span class="vf-play" aria-hidden="true"></span>
+          <span class="vf-title">{{academy.c2.title}}</span>
+          <span class="vf-bar" aria-hidden="true"><i></i></span>
+        </a>
       </div>
       <ol class="modules">
         <li class="reveal"><span class="mod-n">01</span><div><h3>{{academy.c1.title}}</h3><p>{{academy.c1.text}}</p></div></li>
@@ -354,16 +369,16 @@
       <p>{{build.text}}</p>
       <a class="handle" href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">@tamenso.build <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="tiles" aria-hidden="true">
-      <div class="tile t1"><span>{{build.t1}}</span></div>
-      <div class="tile t2"><span>{{build.t2}}</span></div>
-      <div class="tile t3"><span>{{build.t3}}</span></div>
+    <div class="tiles">
+      <a class="tile t1" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>{{build.t1}}</span></a>
+      <a class="tile t2" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>{{build.t2}}</span></a>
+      <a class="tile t3" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>{{build.t3}}</span></a>
     </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
   <section class="about" id="about" aria-labelledby="about-h">
-    <div class="about-arch reveal" aria-hidden="true"><span>E</span></div>
+    <div class="about-arch reveal" aria-hidden="true"><svg class="about-mark"><use href="#mark"/></svg></div>
     <div class="about-text reveal">
       <p class="eyebrow">{{about.eyebrow}}</p>
       <h2 id="about-h">{{about.title}}</h2>
@@ -379,6 +394,8 @@
       <p class="eyebrow light">{{contact.eyebrow}}</p>
       <h2 id="contact-h">{{contact.title}}</h2>
       <p>{{contact.text}}</p>
+      <div class="ctas center"><a class="btn btn-glow" href="#offer">{{contact.cta}}</a></div>
+      <p class="or">{{contact.or}}</p>
       <a class="mail" href="mailto:eabha@tamenso.com?subject={{contact.mailsubject}}">eabha@tamenso.com</a>
       <p class="small">{{contact.small}}</p>
     </div>
@@ -387,12 +404,24 @@
 </main>
 
 <footer class="site-footer">
-  <span>© <span id="year">2026</span> Táménso · Eabha Cullinane EI · Paris</span>
-  <span class="foot-links">
-    <a href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">Instagram</a>
+  <div class="foot-brand">
+    <svg class="foot-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <div><p class="foot-word">Táménso</p><p class="foot-tag">Tá mé anseo · {{footer.tag}}</p></div>
+  </div>
+  <nav class="foot-col" aria-label="{{nav.label}}">
+    <a href="#rooms">{{nav.rooms}}</a><a href="#offer">{{nav.offer}}</a><a href="#academy">{{nav.academy}}</a><a href="#about">{{nav.about}}</a>
+  </nav>
+  <div class="foot-col">
+    <a href="mailto:eabha@tamenso.com">eabha@tamenso.com</a>
+    <a href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">Instagram @tamenso.build</a>
+    <span class="foot-langs"><a href="/" hreflang="en">English</a> · <a href="/it/" hreflang="it">Italiano</a> · <a href="/fr/" hreflang="fr">Français</a></span>
+  </div>
+  <div class="foot-base">
+    <span>© <span id="year">2026</span> Táménso · Eabha Cullinane EI · Paris</span>
     <a href="/mentions-legales.html">{{footer.legal}}</a>
-  </span>
+  </div>
 </footer>
+<a class="float-cta" href="#offer" hidden>{{hero.cta1}}</a>
 
 <script src="/script.js" defer></script>
 </body>

@@ -34,16 +34,21 @@
 </script>
 </head>
 <body class="home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <radialGradient id="g-door" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#F6D7A2"/><stop offset=".45" stop-color="#D99A52"/><stop offset="1" stop-color="#9A4A26"/></radialGradient>
+  <symbol id="mark" viewBox="0 0 100 130"><path d="M8 126V50a42 42 0 0 1 84 0v76" fill="none" stroke="currentColor" stroke-width="5"/><path d="M26 126V60a24 24 0 0 1 48 0v66z" fill="url(#g-door)"/><path d="M2 126h96" stroke="currentColor" stroke-width="5"/></symbol>
+</defs></svg>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-nav" id="top">
-  <a class="word" href="/" aria-label="Táménso">Táménso</a>
-  <nav class="nav-links" aria-label="Main">
+  <a class="word" href="/" aria-label="Táménso"><svg class="word-mark" aria-hidden="true"><use href="#mark"/></svg>Táménso</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links"><span class="menu-lines" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
+  <nav class="nav-links" id="nav-links" aria-label="Main">
     <a href="#rooms">What I do</a>
     <a href="#offer">Your path</a>
     <a href="#academy">Academy</a>
     <a href="#about">About</a>
-    <a href="#contact" class="nav-cta">Get in touch</a>
+    <a href="#brief" class="nav-cta">Get in touch</a>
   </nav>
   <div class="langs" aria-label="Language">
     <a href="/" hreflang="en" lang="en" aria-current="page">EN</a>
@@ -72,7 +77,7 @@
       </h1>
       <p class="lede">I set up AI for small and medium businesses over four months, explained in their own language, so they can then run it on their own.</p>
       <div class="ctas">
-        <a class="btn btn-glow" href="#contact">Book a first conversation</a>
+        <a class="btn btn-glow" href="#offer">Find your path</a>
         <a class="btn btn-ghost" href="#academy">See the Academy</a>
       </div>
     </div>
@@ -98,7 +103,7 @@
           <figcaption>Since February 2025, the EU&#x27;s AI law asks every business that uses AI at work to make sure its people understand it.</figcaption>
         </figure>
       </div>
-      <p class="sources">Sources: Eurostat, “20% of EU enterprises use AI technologies”, December 2025 (survey isoc_eb_ai); Regulation (EU) 2024/1689 (AI Act), Article 4.</p>
+      <p class="sources">Sources: <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2" rel="noopener" target="_blank">Eurostat, December 2025</a> · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" rel="noopener" target="_blank">AI Act (Regulation (EU) 2024/1689), art. 4</a></p>
     </div>
   </section>
 
@@ -142,6 +147,7 @@
       </article>
       <article class="room room-closed reveal tilt">
         <div class="room-top"><span class="room-n">04</span><span class="tag tag-later">Later</span></div>
+        <div class="closed-door" aria-hidden="true"><span class="cd-leaf"></span><span class="cd-light"></span></div>
         <h3>More rooms</h3>
         <p>Strategy, real estate and design: doors that will open later.</p>
       </article>
@@ -160,10 +166,10 @@
       <div class="sec-col reveal">
         <h3>By sector</h3>
         <ul class="sec-list">
-          <li><strong>Food service</strong></li>
-          <li><strong>Hospitality</strong></li>
-          <li><strong>Design &amp; architecture</strong></li>
-          <li><strong>Fashion &amp; creative</strong></li>
+          <li><span class="sec-n">01</span><strong>Food service</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">02</span><strong>Hospitality</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">03</span><strong>Design &amp; architecture</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">04</span><strong>Fashion &amp; creative</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
         </ul>
       </div>
       <div class="sec-col reveal">
@@ -205,6 +211,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>I&#x27;m new to Claude</h3>
         <p class="pdoor-sub">Start from zero, at your pace</p>
+        <p class="pick">Pick one</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">Set up my account together</span><span class="opt-hint">One session: account, first project, first useful task</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">First steps</span><span class="opt-hint">A few sessions to build the daily habits</span></button></li>
@@ -215,6 +222,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>I already use Claude</h3>
         <p class="pdoor-sub">Make it work for you every day</p>
+        <p class="pick">Pick any · combine with other doors</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">An assistant for my business</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">Automations for daily tasks</span></button></li>
@@ -226,6 +234,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>I want to grow my business</h3>
         <p class="pdoor-sub">Find new clients, build your presence, automate your outreach</p>
+        <p class="pick">Pick any · combine with other doors</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">Automated outreach to new clients</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">A stronger LinkedIn presence</span></button></li>
@@ -237,7 +246,7 @@
     <div class="path-panel reveal" aria-live="polite"
          data-subject="My Táménso path" data-hello="Hello Eabha, here is the path I&#x27;d like:">
       <div class="path-head">
-        <p class="eyebrow light">Your path</p>
+        <div class="path-top"><p class="eyebrow light">Your path <span class="path-count" hidden></span></p><button type="button" class="path-reset" hidden>Start over</button></div>
         <p class="path-empty">Open a door to start building your path.</p>
         <ol class="path-list"></ol>
       </div>
@@ -255,12 +264,12 @@
         <div>
           <p class="eyebrow">Two minutes</p>
           <h3 class="brief-title">Let&#x27;s get to know each other</h3>
-          <p class="brief-intro">A few quick questions so I can prepare something useful for you. Only your name and email are needed; the rest helps.</p>
+          <p class="brief-intro">A few quick questions so I can prepare something useful for you. Only your name and email (*) are needed; the rest helps.</p>
         </div>
       </div>
 
       <div class="q reveal">
-        <p class="bubble"><label for="f-name">First of all, what&#x27;s your name?</label></p>
+        <p class="bubble"><label for="f-name">First of all, what&#x27;s your name? <span class="req" title="Required">*</span></label></p>
         <input class="answer" id="f-name" name="name" data-label="Name" autocomplete="name" required placeholder="Your name">
       </div>
 
@@ -301,7 +310,7 @@
       </fieldset>
 
       <div class="q reveal">
-        <p class="bubble"><label for="f-email">Last one: how can I reach you?</label></p>
+        <p class="bubble"><label for="f-email">Last one: how can I reach you? <span class="req" title="Required">*</span></label></p>
         <div class="row2">
           <input class="answer" id="f-email" name="email" data-label="Email" type="email" autocomplete="email" required placeholder="Your email">
           <input class="answer" name="phone" data-label="Phone" type="tel" autocomplete="tel" placeholder="Phone (optional)" aria-label="Phone (optional)">
@@ -310,7 +319,7 @@
 
       <div class="send reveal">
         <p class="privacy">I&#x27;ll only use this to reply to you. Nothing is stored on this site.</p>
-        <button class="btn btn-glow send-btn" type="submit">Send to Eabha <span aria-hidden="true">→</span></button>
+        <button class="btn btn-glow send-btn" type="submit"><span>Send to Eabha</span><span class="arr" aria-hidden="true">→</span></button>
         <p class="form-error" role="alert" hidden>Just your name and a valid email, please, so I can reply.</p>
         <p class="thanks" role="status" hidden>Thank you! Your email app should open with everything filled in; just press send. If it doesn&#x27;t, write to eabha@tamenso.com.</p>
       </div>
@@ -333,6 +342,12 @@
           <a class="btn btn-ink" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank">Watch on Instagram</a>
           <a class="btn btn-line" href="mailto:eabha@tamenso.com?subject=Academy%20lessons">Get new lessons by email</a>
         </div>
+        <a class="video-frame" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank" aria-label="Watch on Instagram">
+          <span class="vf-tag">Lesson 02 · 3 min</span>
+          <span class="vf-play" aria-hidden="true"></span>
+          <span class="vf-title">Asking well</span>
+          <span class="vf-bar" aria-hidden="true"><i></i></span>
+        </a>
       </div>
       <ol class="modules">
         <li class="reveal"><span class="mod-n">01</span><div><h3>What AI can and can&#x27;t do for you</h3><p>A clear picture, without hype, of where it saves time and where it doesn&#x27;t.</p></div></li>
@@ -354,16 +369,16 @@
       <p>Every week: one useful thing AI can do for a small business, shown step by step, in Italian, French and English.</p>
       <a class="handle" href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">@tamenso.build <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="tiles" aria-hidden="true">
-      <div class="tile t1"><span>1 task · 10 minutes · saved every week</span></div>
-      <div class="tile t2"><span>Prompt of the week</span></div>
-      <div class="tile t3"><span>Before → after</span></div>
+    <div class="tiles">
+      <a class="tile t1" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>1 task · 10 minutes · saved every week</span></a>
+      <a class="tile t2" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>Prompt of the week</span></a>
+      <a class="tile t3" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>Before → after</span></a>
     </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
   <section class="about" id="about" aria-labelledby="about-h">
-    <div class="about-arch reveal" aria-hidden="true"><span>E</span></div>
+    <div class="about-arch reveal" aria-hidden="true"><svg class="about-mark"><use href="#mark"/></svg></div>
     <div class="about-text reveal">
       <p class="eyebrow">About</p>
       <h2 id="about-h">Eabha Cullinane</h2>
@@ -379,6 +394,8 @@
       <p class="eyebrow light">Contact</p>
       <h2 id="contact-h">Let&#x27;s start with a conversation</h2>
       <p>Tell me what your team does each week and what takes too long. We&#x27;ll start with a short online call. I reply within two working days.</p>
+      <div class="ctas center"><a class="btn btn-glow" href="#offer">Choose your path</a></div>
+      <p class="or">or write to me directly</p>
       <a class="mail" href="mailto:eabha@tamenso.com?subject=Hello%20T%C3%A1m%C3%A9nso">eabha@tamenso.com</a>
       <p class="small">In Italian, French or English.</p>
     </div>
@@ -387,12 +404,24 @@
 </main>
 
 <footer class="site-footer">
-  <span>© <span id="year">2026</span> Táménso · Eabha Cullinane EI · Paris</span>
-  <span class="foot-links">
-    <a href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">Instagram</a>
+  <div class="foot-brand">
+    <svg class="foot-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <div><p class="foot-word">Táménso</p><p class="foot-tag">Tá mé anseo · AI set-up, outreach and websites for small businesses</p></div>
+  </div>
+  <nav class="foot-col" aria-label="Main">
+    <a href="#rooms">What I do</a><a href="#offer">Your path</a><a href="#academy">Academy</a><a href="#about">About</a>
+  </nav>
+  <div class="foot-col">
+    <a href="mailto:eabha@tamenso.com">eabha@tamenso.com</a>
+    <a href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">Instagram @tamenso.build</a>
+    <span class="foot-langs"><a href="/" hreflang="en">English</a> · <a href="/it/" hreflang="it">Italiano</a> · <a href="/fr/" hreflang="fr">Français</a></span>
+  </div>
+  <div class="foot-base">
+    <span>© <span id="year">2026</span> Táménso · Eabha Cullinane EI · Paris</span>
     <a href="/mentions-legales.html">Legal notice</a>
-  </span>
+  </div>
 </footer>
+<a class="float-cta" href="#offer" hidden>Find your path</a>
 
 <script src="/script.js" defer></script>
 </body>

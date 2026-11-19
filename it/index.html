@@ -34,16 +34,21 @@
 </script>
 </head>
 <body class="home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <radialGradient id="g-door" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#F6D7A2"/><stop offset=".45" stop-color="#D99A52"/><stop offset="1" stop-color="#9A4A26"/></radialGradient>
+  <symbol id="mark" viewBox="0 0 100 130"><path d="M8 126V50a42 42 0 0 1 84 0v76" fill="none" stroke="currentColor" stroke-width="5"/><path d="M26 126V60a24 24 0 0 1 48 0v66z" fill="url(#g-door)"/><path d="M2 126h96" stroke="currentColor" stroke-width="5"/></symbol>
+</defs></svg>
 <a class="skip" href="#main">Vai al contenuto</a>
 
 <header class="site-nav" id="top">
-  <a class="word" href="/it/" aria-label="Táménso">Táménso</a>
-  <nav class="nav-links" aria-label="Principale">
+  <a class="word" href="/it/" aria-label="Táménso"><svg class="word-mark" aria-hidden="true"><use href="#mark"/></svg>Táménso</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links"><span class="menu-lines" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
+  <nav class="nav-links" id="nav-links" aria-label="Principale">
     <a href="#rooms">Cosa faccio</a>
     <a href="#offer">Il tuo percorso</a>
     <a href="#academy">Academy</a>
     <a href="#about">Chi sono</a>
-    <a href="#contact" class="nav-cta">Contattami</a>
+    <a href="#brief" class="nav-cta">Contattami</a>
   </nav>
   <div class="langs" aria-label="Lingua">
     <a href="/" hreflang="en" lang="en" >EN</a>
@@ -72,7 +77,7 @@
       </h1>
       <p class="lede">Configuro l&#x27;intelligenza artificiale per le piccole e medie imprese in quattro mesi, spiegata nella loro lingua, perché poi possano gestirla da sole.</p>
       <div class="ctas">
-        <a class="btn btn-glow" href="#contact">Fissa un primo incontro</a>
+        <a class="btn btn-glow" href="#offer">Trova il tuo percorso</a>
         <a class="btn btn-ghost" href="#academy">Scopri l&#x27;Academy</a>
       </div>
     </div>
@@ -98,7 +103,7 @@
           <figcaption>Dal febbraio 2025 il regolamento europeo sull&#x27;IA chiede a ogni impresa che usa l&#x27;IA nel lavoro di fare in modo che il personale sappia usarla.</figcaption>
         </figure>
       </div>
-      <p class="sources">Fonti: Istat, Imprese e ICT 2025; Regolamento (UE) 2024/1689 (AI Act), articolo 4.</p>
+      <p class="sources">Fonti: <a href="https://www.istat.it/comunicato-stampa/imprese-e-ict-anno-2025/" rel="noopener" target="_blank">Istat, Imprese e ICT 2025</a> · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" rel="noopener" target="_blank">AI Act (Regolamento (UE) 2024/1689), art. 4</a></p>
     </div>
   </section>
 
@@ -142,6 +147,7 @@
       </article>
       <article class="room room-closed reveal tilt">
         <div class="room-top"><span class="room-n">04</span><span class="tag tag-later">Più avanti</span></div>
+        <div class="closed-door" aria-hidden="true"><span class="cd-leaf"></span><span class="cd-light"></span></div>
         <h3>Altre stanze</h3>
         <p>Strategia, immobiliare e design: porte che si apriranno più avanti.</p>
       </article>
@@ -160,10 +166,10 @@
       <div class="sec-col reveal">
         <h3>Per settore</h3>
         <ul class="sec-list">
-          <li><strong>Ristorazione</strong></li>
-          <li><strong>Ospitalità</strong></li>
-          <li><strong>Design e architettura</strong></li>
-          <li><strong>Moda e creativi</strong></li>
+          <li><span class="sec-n">01</span><strong>Ristorazione</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">02</span><strong>Ospitalità</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">03</span><strong>Design e architettura</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
+          <li><span class="sec-n">04</span><strong>Moda e creativi</strong><span class="sec-arrow" aria-hidden="true">→</span></li>
         </ul>
       </div>
       <div class="sec-col reveal">
@@ -205,6 +211,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>Sono nuovo su Claude</h3>
         <p class="pdoor-sub">Partire da zero, al tuo ritmo</p>
+        <p class="pick">Scegline una</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">Configuriamo insieme l&#x27;account</span><span class="opt-hint">Una sessione: account, primo progetto, prima attività utile</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="a" data-single><span class="tick" aria-hidden="true"></span><span class="opt-label">Primi passi</span><span class="opt-hint">Qualche sessione per costruire le abitudini quotidiane</span></button></li>
@@ -215,6 +222,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>Uso già Claude</h3>
         <p class="pdoor-sub">Farlo lavorare per te ogni giorno</p>
+        <p class="pick">Scegli liberamente · combinabile con le altre porte</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">Un assistente per la mia impresa</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="b"><span class="tick" aria-hidden="true"></span><span class="opt-label">Automazioni per il quotidiano</span></button></li>
@@ -226,6 +234,7 @@
         <div class="arch-frame" aria-hidden="true"><div class="arch-glow"></div><div class="leaf"><span class="knob"></span></div></div>
         <h3>Voglio far crescere la mia impresa</h3>
         <p class="pdoor-sub">Trovare nuovi clienti, costruire la tua presenza, automatizzare la prospezione</p>
+        <p class="pick">Scegli liberamente · combinabile con le altre porte</p>
         <ul class="opts" role="list">
             <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">Prospezione automatizzata di nuovi clienti</span></button></li>
             <li><button type="button" class="opt" aria-pressed="false" data-group="c"><span class="tick" aria-hidden="true"></span><span class="opt-label">Una presenza più forte su LinkedIn</span></button></li>
@@ -237,7 +246,7 @@
     <div class="path-panel reveal" aria-live="polite"
          data-subject="Il mio percorso Táménso" data-hello="Ciao Eabha, ecco il percorso che vorrei:">
       <div class="path-head">
-        <p class="eyebrow light">Il tuo percorso</p>
+        <div class="path-top"><p class="eyebrow light">Il tuo percorso <span class="path-count" hidden></span></p><button type="button" class="path-reset" hidden>Ricomincia</button></div>
         <p class="path-empty">Apri una porta per iniziare il tuo percorso.</p>
         <ol class="path-list"></ol>
       </div>
@@ -255,12 +264,12 @@
         <div>
           <p class="eyebrow">Due minuti</p>
           <h3 class="brief-title">Conosciamoci</h3>
-          <p class="brief-intro">Qualche domanda veloce per prepararti qualcosa di utile. Servono solo nome ed email; il resto aiuta.</p>
+          <p class="brief-intro">Qualche domanda veloce per prepararti qualcosa di utile. Servono solo nome ed email (*); il resto aiuta.</p>
         </div>
       </div>
 
       <div class="q reveal">
-        <p class="bubble"><label for="f-name">Prima di tutto, come ti chiami?</label></p>
+        <p class="bubble"><label for="f-name">Prima di tutto, come ti chiami? <span class="req" title="Obbligatorio">*</span></label></p>
         <input class="answer" id="f-name" name="name" data-label="Nome" autocomplete="name" required placeholder="Il tuo nome">
       </div>
 
@@ -301,7 +310,7 @@
       </fieldset>
 
       <div class="q reveal">
-        <p class="bubble"><label for="f-email">Ultima domanda: come posso contattarti?</label></p>
+        <p class="bubble"><label for="f-email">Ultima domanda: come posso contattarti? <span class="req" title="Obbligatorio">*</span></label></p>
         <div class="row2">
           <input class="answer" id="f-email" name="email" data-label="Email" type="email" autocomplete="email" required placeholder="La tua email">
           <input class="answer" name="phone" data-label="Telefono" type="tel" autocomplete="tel" placeholder="Telefono (facoltativo)" aria-label="Telefono (facoltativo)">
@@ -310,7 +319,7 @@
 
       <div class="send reveal">
         <p class="privacy">Userò queste informazioni solo per risponderti. Nulla viene salvato su questo sito.</p>
-        <button class="btn btn-glow send-btn" type="submit">Invia a Eabha <span aria-hidden="true">→</span></button>
+        <button class="btn btn-glow send-btn" type="submit"><span>Invia a Eabha</span><span class="arr" aria-hidden="true">→</span></button>
         <p class="form-error" role="alert" hidden>Mi servono solo il tuo nome e un&#x27;email valida per poterti rispondere.</p>
         <p class="thanks" role="status" hidden>Grazie! Dovrebbe aprirsi la tua email con tutto già compilato: basta premere invio. Se non succede, scrivi a eabha@tamenso.com.</p>
       </div>
@@ -333,6 +342,12 @@
           <a class="btn btn-ink" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank">Guarda su Instagram</a>
           <a class="btn btn-line" href="mailto:eabha@tamenso.com?subject=Lezioni%20Academy">Ricevi le nuove lezioni via email</a>
         </div>
+        <a class="video-frame" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank" aria-label="Guarda su Instagram">
+          <span class="vf-tag">Lezione 02 · 3 min</span>
+          <span class="vf-play" aria-hidden="true"></span>
+          <span class="vf-title">Chiedere bene</span>
+          <span class="vf-bar" aria-hidden="true"><i></i></span>
+        </a>
       </div>
       <ol class="modules">
         <li class="reveal"><span class="mod-n">01</span><div><h3>Cosa l&#x27;IA può e non può fare per te</h3><p>Un quadro chiaro, senza clamore, di dove fa risparmiare tempo e dove no.</p></div></li>
@@ -354,16 +369,16 @@
       <p>Ogni settimana: una cosa utile che l&#x27;IA può fare per una piccola impresa, mostrata passo dopo passo, in italiano, francese e inglese.</p>
       <a class="handle" href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">@tamenso.build <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="tiles" aria-hidden="true">
-      <div class="tile t1"><span>1 attività · 10 minuti · risparmiati ogni settimana</span></div>
-      <div class="tile t2"><span>Il prompt della settimana</span></div>
-      <div class="tile t3"><span>Prima → dopo</span></div>
+    <div class="tiles">
+      <a class="tile t1" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>1 attività · 10 minuti · risparmiati ogni settimana</span></a>
+      <a class="tile t2" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>Il prompt della settimana</span></a>
+      <a class="tile t3" href="https://www.instagram.com/tamenso.build/" rel="noopener" target="_blank"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><span>Prima → dopo</span></a>
     </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
   <section class="about" id="about" aria-labelledby="about-h">
-    <div class="about-arch reveal" aria-hidden="true"><span>E</span></div>
+    <div class="about-arch reveal" aria-hidden="true"><svg class="about-mark"><use href="#mark"/></svg></div>
     <div class="about-text reveal">
       <p class="eyebrow">Chi sono</p>
       <h2 id="about-h">Eabha Cullinane</h2>
@@ -379,6 +394,8 @@
       <p class="eyebrow light">Contatti</p>
       <h2 id="contact-h">Cominciamo da una conversazione</h2>
       <p>Raccontami cosa fa il tuo team ogni settimana e cosa richiede troppo tempo. Iniziamo con una breve call online. Rispondo entro due giorni lavorativi.</p>
+      <div class="ctas center"><a class="btn btn-glow" href="#offer">Scegli il tuo percorso</a></div>
+      <p class="or">oppure scrivimi direttamente</p>
       <a class="mail" href="mailto:eabha@tamenso.com?subject=Ciao%20T%C3%A1m%C3%A9nso">eabha@tamenso.com</a>
       <p class="small">In italiano, francese o inglese.</p>
     </div>
@@ -387,12 +404,24 @@
 </main>
 
 <footer class="site-footer">
-  <span>© <span id="year">2026</span> Táménso · Eabha Cullinane EI · Paris</span>
-  <span class="foot-links">
-    <a href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">Instagram</a>
+  <div class="foot-brand">
+    <svg class="foot-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <div><p class="foot-word">Táménso</p><p class="foot-tag">Tá mé anseo · IA, prospezione e siti web per le piccole imprese</p></div>
+  </div>
+  <nav class="foot-col" aria-label="Principale">
+    <a href="#rooms">Cosa faccio</a><a href="#offer">Il tuo percorso</a><a href="#academy">Academy</a><a href="#about">Chi sono</a>
+  </nav>
+  <div class="foot-col">
+    <a href="mailto:eabha@tamenso.com">eabha@tamenso.com</a>
+    <a href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">Instagram @tamenso.build</a>
+    <span class="foot-langs"><a href="/" hreflang="en">English</a> · <a href="/it/" hreflang="it">Italiano</a> · <a href="/fr/" hreflang="fr">Français</a></span>
+  </div>
+  <div class="foot-base">
+    <span>© <span id="year">2026</span> Táménso · Eabha Cullinane EI · Paris</span>
     <a href="/mentions-legales.html">Note legali</a>
-  </span>
+  </div>
 </footer>
+<a class="float-cta" href="#offer" hidden>Trova il tuo percorso</a>
 
 <script src="/script.js" defer></script>
 </body>
