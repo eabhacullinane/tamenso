@@ -110,7 +110,7 @@
   "sec.p2": "Preventivi che richiedono ore",
   "sec.p3": "Rispondere alle recensioni",
   "sec.p4": "Menu e traduzioni",
-  "sec.p5": "Un post ogni settimana",
+  "sec.p5": "Comunicazione costante e piano marketing",
   "sec.p6": "Trovare nuovi clienti",
   "sec.p7": "Burocrazia con i fornitori",
   "sec.p8": "Verbali e follow-up",
@@ -133,5 +133,9 @@
   "offer.pilot.title": "Posti pilota aperti.",
   "offer.pilot.text": "Le prime imprese hanno una tariffa ridotta in cambio di un caso studio sincero.",
   "offer.pilot.cta": "Chiedi un posto pilota",
-  "academy.cta2": "Guarda su Instagram"
+  "academy.cta2": "Guarda su Instagram",
+  "sec.p9": "Gestione degli ordini",
+  "sec.p10": "Prenotazioni",
+  "sec.p11": "Fatture e solleciti di pagamento",
+  "sec.p12": "Turni del personale e magazzino"
 }

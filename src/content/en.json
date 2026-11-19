@@ -110,7 +110,7 @@
   "sec.p2": "Quotes take hours",
   "sec.p3": "Replying to reviews",
   "sec.p4": "Menus & translations",
-  "sec.p5": "A post every week",
+  "sec.p5": "Constant communication & a marketing plan",
   "sec.p6": "Finding new clients",
   "sec.p7": "Supplier admin",
   "sec.p8": "Meeting notes & follow-ups",
@@ -133,5 +133,9 @@
   "offer.pilot.title": "Pilot places open.",
   "offer.pilot.text": "A few first businesses get a reduced rate in exchange for an honest case study.",
   "offer.pilot.cta": "Ask for a pilot place",
-  "academy.cta2": "Watch on Instagram"
+  "academy.cta2": "Watch on Instagram",
+  "sec.p9": "Order management",
+  "sec.p10": "Reservations & bookings",
+  "sec.p11": "Invoices & payment reminders",
+  "sec.p12": "Staff schedules & stock"
 }

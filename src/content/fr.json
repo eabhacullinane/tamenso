@@ -110,7 +110,7 @@
   "sec.p2": "Des devis qui prennent des heures",
   "sec.p3": "Répondre aux avis",
   "sec.p4": "Cartes et traductions",
-  "sec.p5": "Un post chaque semaine",
+  "sec.p5": "Communication régulière et plan marketing",
   "sec.p6": "Trouver de nouveaux clients",
   "sec.p7": "L'administratif fournisseurs",
   "sec.p8": "Comptes rendus et relances",
@@ -133,5 +133,9 @@
   "offer.pilot.title": "Places pilotes ouvertes.",
   "offer.pilot.text": "Les premières entreprises bénéficient d'un tarif réduit en échange d'une étude de cas honnête.",
   "offer.pilot.cta": "Demander une place pilote",
-  "academy.cta2": "Voir sur Instagram"
+  "academy.cta2": "Voir sur Instagram",
+  "sec.p9": "Gestion des commandes",
+  "sec.p10": "Réservations",
+  "sec.p11": "Factures et relances de paiement",
+  "sec.p12": "Plannings et stocks"
 }
