@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<link rel="canonical" href="https://tamenso.com{{path}}">
+<link rel="alternate" hreflang="en" href="https://tamenso.com/">
+<link rel="alternate" hreflang="it" href="https://tamenso.com/it/">
+<link rel="alternate" hreflang="fr" href="https://tamenso.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://tamenso.com/">
+<meta property="og:title" content="{{meta.title}}">
+<meta property="og:description" content="{{meta.description}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tamenso.com{{path}}">
+<meta property="og:locale" content="{{meta.locale}}">
+<meta name="theme-color" content="#E7DCC7">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/marcellus-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Táménso",
+  "url": "https://tamenso.com{{path}}",
+  "description": "{{meta.description}}",
+  "founder": {"@type": "Person", "name": "Eabha Cullinane"},
+  "areaServed": ["IT", "FR"],
+  "availableLanguage": ["it", "fr", "en"],
+  "sameAs": ["https://www.instagram.com/tamenso.build/"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">{{nav.skip}}</a>
+
+<header class="site-nav" id="top">
+  <a class="word" href="{{path}}" aria-label="Táménso">Táménso</a>
+  <nav class="nav-links" aria-label="{{nav.label}}">
+    <a href="#rooms">{{nav.rooms}}</a>
+    <a href="#academy">{{nav.academy}}</a>
+    <a href="#about">{{nav.about}}</a>
+    <a href="#contact" class="nav-cta">{{nav.contact}}</a>
+  </nav>
+  <div class="langs" aria-label="{{nav.language}}">
+    <a href="/it/" hreflang="it" lang="it" {{cur.it}}>IT</a>
+    <a href="/fr/" hreflang="fr" lang="fr" {{cur.fr}}>FR</a>
+    <a href="/" hreflang="en" lang="en" {{cur.en}}>EN</a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-text reveal">
+      <p class="eyebrow">{{hero.eyebrow}}</p>
+      <h1>
+        <span class="irish" lang="ga">Tá mé anseo.</span>
+        <span class="gloss">{{hero.gloss}}</span>
+      </h1>
+      <p class="lede">{{hero.lede}}</p>
+      <div class="ctas">
+        <a class="btn btn-ink" href="#contact">{{hero.cta1}}</a>
+        <a class="btn btn-line" href="#academy">{{hero.cta2}}</a>
+      </div>
+    </div>
+    <div class="hero-door reveal" aria-hidden="true">
+      <div class="door">
+        <div class="door-light"></div>
+        <div class="door-grain"></div>
+        <span class="door-word">Táménso</span>
+      </div>
+      <p class="door-note">{{hero.note}}</p>
+    </div>
+  </section>
+
+  <!-- ============ WHY NOW ============ -->
+  <section class="why" aria-labelledby="why-h">
+    <div class="why-inner">
+      <p class="eyebrow light">{{why.eyebrow}}</p>
+      <h2 id="why-h" class="why-title reveal">{{why.title}}</h2>
+      <div class="stats">
+        <figure class="stat reveal">
+          <span class="num">{{why.s1.num}}</span>
+          <figcaption>{{why.s1.text}}</figcaption>
+        </figure>
+        <figure class="stat reveal">
+          <span class="num">{{why.s2.num}}</span>
+          <figcaption>{{why.s2.text}}</figcaption>
+        </figure>
+        <figure class="stat reveal">
+          <span class="num">{{why.s3.num}}</span>
+          <figcaption>{{why.s3.text}}</figcaption>
+        </figure>
+      </div>
+      <p class="sources">{{why.sources}}</p>
+    </div>
+  </section>
+
+  <!-- ============ ROOMS ============ -->
+  <section class="rooms" id="rooms" aria-labelledby="rooms-h">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{rooms.eyebrow}}</p>
+      <h2 id="rooms-h">{{rooms.title}}</h2>
+      <p class="intro">{{rooms.intro}}</p>
+    </div>
+    <div class="room-grid">
+      <article class="room reveal">
+        <div class="room-top"><span class="room-n">01</span><span class="tag tag-open">{{rooms.open}}</span></div>
+        <h3>{{rooms.r1.title}}</h3>
+        <p>{{rooms.r1.text}}</p>
+        <ul>
+          <li>{{rooms.r1.b1}}</li>
+          <li>{{rooms.r1.b2}}</li>
+          <li>{{rooms.r1.b3}}</li>
+        </ul>
+      </article>
+      <article class="room reveal">
+        <div class="room-top"><span class="room-n">02</span><span class="tag tag-soon">{{rooms.soon}}</span></div>
+        <h3>{{rooms.r2.title}}</h3>
+        <p>{{rooms.r2.text}}</p>
+        <ul>
+          <li>{{rooms.r2.b1}}</li>
+          <li>{{rooms.r2.b2}}</li>
+          <li>{{rooms.r2.b3}}</li>
+        </ul>
+      </article>
+      <article class="room reveal">
+        <div class="room-top"><span class="room-n">03</span><span class="tag tag-open">{{rooms.open}}</span></div>
+        <h3>{{rooms.r3.title}}</h3>
+        <p>{{rooms.r3.text}}</p>
+        <ul>
+          <li>{{rooms.r3.b1}}</li>
+          <li>{{rooms.r3.b2}}</li>
+          <li>{{rooms.r3.b3}}</li>
+        </ul>
+      </article>
+      <article class="room room-closed reveal">
+        <div class="room-top"><span class="room-n">04</span><span class="tag tag-later">{{rooms.later}}</span></div>
+        <h3>{{rooms.r4.title}}</h3>
+        <p>{{rooms.r4.text}}</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="method" aria-labelledby="method-h">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{method.eyebrow}}</p>
+      <h2 id="method-h">{{method.title}}</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span class="step-n">I</span><h3>{{method.m1.title}}</h3><p>{{method.m1.text}}</p></li>
+      <li class="reveal"><span class="step-n">II</span><h3>{{method.m2.title}}</h3><p>{{method.m2.text}}</p></li>
+      <li class="reveal"><span class="step-n">III</span><h3>{{method.m3.title}}</h3><p>{{method.m3.text}}</p></li>
+    </ol>
+  </section>
+
+  <!-- ============ ACADEMY ============ -->
+  <section class="academy" id="academy" aria-labelledby="academy-h">
+    <div class="academy-inner">
+      <div class="section-head left reveal">
+        <p class="eyebrow">{{academy.eyebrow}}</p>
+        <h2 id="academy-h">{{academy.title}}</h2>
+        <p class="intro">{{academy.intro}}</p>
+        <a class="btn btn-ink" href="mailto:eabha@tamenso.com?subject={{academy.mailsubject}}">{{academy.cta}}</a>
+      </div>
+      <ol class="modules">
+        <li class="reveal"><span class="mod-n">01</span><div><h3>{{academy.c1.title}}</h3><p>{{academy.c1.text}}</p></div></li>
+        <li class="reveal"><span class="mod-n">02</span><div><h3>{{academy.c2.title}}</h3><p>{{academy.c2.text}}</p></div></li>
+        <li class="reveal"><span class="mod-n">03</span><div><h3>{{academy.c3.title}}</h3><p>{{academy.c3.text}}</p></div></li>
+        <li class="reveal"><span class="mod-n">04</span><div><h3>{{academy.c4.title}}</h3><p>{{academy.c4.text}}</p></div></li>
+        <li class="reveal"><span class="mod-n">05</span><div><h3>{{academy.c5.title}}</h3><p>{{academy.c5.text}}</p></div></li>
+        <li class="reveal"><span class="mod-n">06</span><div><h3>{{academy.c6.title}}</h3><p>{{academy.c6.text}}</p></div></li>
+      </ol>
+    </div>
+    <p class="disclaimer">{{academy.disclaimer}}</p>
+  </section>
+
+  <!-- ============ BUILD IN PUBLIC ============ -->
+  <section class="build" aria-labelledby="build-h">
+    <div class="build-text reveal">
+      <p class="eyebrow">{{build.eyebrow}}</p>
+      <h2 id="build-h">{{build.title}}</h2>
+      <p>{{build.text}}</p>
+      <a class="handle" href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">@tamenso.build <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="tiles" aria-hidden="true">
+      <div class="tile t1"><span>{{build.t1}}</span></div>
+      <div class="tile t2"><span>{{build.t2}}</span></div>
+      <div class="tile t3"><span>{{build.t3}}</span></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about" aria-labelledby="about-h">
+    <div class="about-arch reveal" aria-hidden="true"><span>E</span></div>
+    <div class="about-text reveal">
+      <p class="eyebrow">{{about.eyebrow}}</p>
+      <h2 id="about-h">{{about.title}}</h2>
+      <p>{{about.p1}}</p>
+      <p>{{about.p2}}</p>
+      <p class="name-note">{{about.name}}</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="contact-inner reveal">
+      <p class="eyebrow light">{{contact.eyebrow}}</p>
+      <h2 id="contact-h">{{contact.title}}</h2>
+      <p>{{contact.text}}</p>
+      <a class="mail" href="mailto:eabha@tamenso.com?subject={{contact.mailsubject}}">eabha@tamenso.com</a>
+      <p class="small">{{contact.small}}</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year">2026</span> Táménso · Eabha Cullinane EI · Paris</span>
+  <span class="foot-links">
+    <a href="https://www.instagram.com/tamenso.build/" rel="me noopener" target="_blank">Instagram</a>
+    <a href="/mentions-legales.html">{{footer.legal}}</a>
+  </span>
+</footer>
+
+<script src="/script.js" defer></script>
+</body>
+</html>
