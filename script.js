@@ -139,6 +139,14 @@
       bars.innerHTML = L.slides.map(function () { return '<span><i></i></span>'; }).join('');
       player.hidden = false;
       document.body.classList.add('pl-open');
+      player.classList.toggle('is-video', !!L.video);
+      if (L.video) {
+        cancelAnimationFrame(raf);
+        stage.innerHTML = '<video class="pl-video" controls autoplay playsinline preload="metadata" poster="' + esc(L.poster || '') + '" src="' + esc(L.video) + '"></video>';
+        countEl.textContent = '';
+        player.querySelector('.pl-close').focus();
+        return;
+      }
       setPaused(reduce);
       render();
       last = 0;
@@ -146,6 +154,8 @@
       player.querySelector('.pl-close').focus();
     }
     function close() {
+      var vid = stage.querySelector('video'); if (vid) vid.pause();
+      stage.innerHTML = '';
       player.hidden = true; L = null;
       document.body.classList.remove('pl-open');
       cancelAnimationFrame(raf);
